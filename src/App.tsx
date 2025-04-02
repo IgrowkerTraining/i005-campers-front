@@ -1,33 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box } from '@chakra-ui/react'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Box 
+        bg="brand.500" 
+        w="100%" 
+        p={4} 
+        color="white"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <h1>
+          Este es un ejemplo con brand.500!
+        </h1>
+      </Box>
+      <Box 
+        bg="primary.main" 
+        w="100%" 
+        p={4} 
+        color="white"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <h1>
+          Este es un ejemplo con Verde! 
+        </h1>
+      </Box>
+      <Box 
+        bg="primary.dark" 
+        w="100%" 
+        p={4} 
+        color="white"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <h1>
+          Este es un ejemplo con negro! 
+        </h1>
+      </Box>
+      <Box 
+        bg="primary.light" 
+        w="100%" 
+        p={4} 
+        color="black"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <h1>
+          Este es un ejemplo con blanco! 
+        </h1>
+      </Box>
+      <Box 
+        bg="secondary.main" 
+        w="100%" 
+        p={4} 
+        color="white"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <h1>
+          Este es un ejemplo con azul ligero! 
+        </h1>
+      </Box>
+      <Box 
+        bg="secondary.accent" 
+        w="100%" 
+        p={4} 
+        color="white"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <h1>
+          Este es un ejemplo con lime! 
+        </h1>
+      </Box>
     </>
   )
 }
