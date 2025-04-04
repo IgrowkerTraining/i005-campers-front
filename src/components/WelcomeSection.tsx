@@ -10,17 +10,17 @@ import {
   HStack, // Para alinear botones horizontalmente
 } from '@chakra-ui/react';
 
-// Reemplaza esta URL con la URL real de tu imagen o impórtala si está localmente
-import imageUrl from '../assets/welcome.jpg'; // URL de ejemplo
+
+import imageUrl from '../assets/welcome.jpg'; 
 
 const WelcomeSection: React.FC = () => {
   return (
     <VStack spacing={8} align="stretch" maxWidth="container.lg" mx="auto">
       {/* Sección de Texto y Botones */}
       <Box
-        bg="teal.50" // Un fondo muy claro, ajusta según veas necesario
-        p={{ base: 4, md: 8 }} // Padding responsivo
-        borderRadius="lg" // Bordes redondeados
+        bg="teal.50" 
+        p={{ base: 4, md: 8 }} 
+        borderRadius="lg" 
         textAlign="center"
       >
         <VStack spacing={4}>
@@ -41,7 +41,7 @@ const WelcomeSection: React.FC = () => {
             </Button>
             <Button
               variant="outline" // Botón secundario con borde
-              colorScheme="teal" // Mantiene el color del borde y texto
+              colorScheme="teal" 
               size="lg"
               // onClick={() => console.log('Iniciar Sesión')}
             >
@@ -54,13 +54,13 @@ const WelcomeSection: React.FC = () => {
       {/* Sección de Imagen */}
       <Box>
         <Image
-          src={imageUrl} // Usa la variable con la URL de la imagen
+          src={imageUrl}
           alt="Grupo de amigos acampando felizmente"
-          borderRadius="lg" // Bordes redondeados para la imagen
-          objectFit="cover" // Asegura que la imagen cubra el contenedor
+          borderRadius="lg" 
+          objectFit="cover" 
           width="100%"
-          maxH="450px" // Limita la altura máxima si es necesario
-          boxShadow="md" // Sombra sutil
+          maxH="450px"
+          boxShadow="md" 
         />
       </Box>
     </VStack>

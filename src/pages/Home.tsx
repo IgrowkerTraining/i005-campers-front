@@ -1,6 +1,8 @@
 import MainLayout from '@/layouts/MainLayout';
 import SearchBar from '@/components/SearchBar';
 import WelcomeSection from '@/components/WelcomeSection';
+import HowItWorks from '@/components/HowItWorks';
+import PromoteCamping from '@/components/PromoteCamping';
 
 // const boxStyles = {
 //   p: 4,
@@ -19,6 +21,8 @@ function Home() {
     <MainLayout>
       <SearchBar />
       <WelcomeSection />
+      <HowItWorks />
+      <PromoteCamping />
     </MainLayout>
   );
 }
