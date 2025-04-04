@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/Navbar.tsx';
 import { Box, VStack } from '@chakra-ui/react';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
@@ -15,7 +16,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         spacing={0} 
         align="stretch" 
     >
-    <div ><strong>header</strong> <Link to="/">Home</Link> <Link to="/about">About</Link></div>
+    <Navbar />
+    {/* <div ><strong>header</strong> <Link to="/">Home</Link> <Link to="/about">About</Link></div> */}
     <Box 
         as="main"
         flex={1}
@@ -29,7 +31,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             {children}
         </Box>
     </Box>
-  <div>footer - Este es el footer</div>
+    <div>footer - Este es el footer</div>
 </VStack>
   );
 };
