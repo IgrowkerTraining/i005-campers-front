@@ -1,5 +1,6 @@
-import { Navbar } from '@/components/Navbar.tsx';
 import { Box, VStack } from '@chakra-ui/react';
+import { Navbar } from '@/components/Navbar.tsx';
+import { Footer } from '@/components/Footer';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
 import { ReactNode } from 'react';
@@ -31,7 +32,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             {children}
         </Box>
     </Box>
-    <div>footer - Este es el footer</div>
+    <Footer />
 </VStack>
   );
 };
