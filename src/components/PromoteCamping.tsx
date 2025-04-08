@@ -4,10 +4,10 @@ import {
   Heading,
   VStack,
   UnorderedList,
-  ListItem,
-  Button,
+  ListItem,  
   useColorModeValue,
 } from "@chakra-ui/react";
+import CustomButton from "./CustomButton";
 
 interface PromoteCampingProps {
   // Agrega aquí cualquier prop que necesites
@@ -16,7 +16,7 @@ interface PromoteCampingProps {
 const PromoteCamping: React.FC<PromoteCampingProps> = () => {
   const headingColor = useColorModeValue("gray.700", "gray.100");
   const textColor = useColorModeValue("gray.600", "gray.300");
-
+CustomButton
   return (
     <Box
       as="section"
@@ -47,12 +47,7 @@ const PromoteCamping: React.FC<PromoteCampingProps> = () => {
         </UnorderedList>
       </VStack>
 
-      <Button
-        colorScheme="teal"
-        size="md"
-      >
-        Registrarse
-      </Button>
+      <CustomButton variant="dark">Registrarse</CustomButton>            
     </Box>
   );
 };

@@ -7,7 +7,8 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { SearchIcon, CheckIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { SearchIcon, CheckIcon } from "@chakra-ui/icons";
+import { BsSearch, BsCheck, BsBackpack } from "react-icons/bs"; 
 
 const HowItWorks: React.FC = () => {
   const bgColor = useColorModeValue("green.50", "gray.700");
@@ -22,7 +23,7 @@ const HowItWorks: React.FC = () => {
       <VStack spacing={8} align="center">
         {/* Paso 1 */}
         <VStack spacing={4}>
-          <Icon as={SearchIcon} w={8} h={8} color="blackAlpha.700" />
+          <Icon as={BsSearch} w={8} h={8} color="blackAlpha.700" />
           <Text textAlign="center" color={textColor}>
             Tu próxima escapada a un clic de distancia. Filtrá por ubicación, precio 
             y servicios para encontrar el lugar perfecto.
@@ -31,7 +32,7 @@ const HowItWorks: React.FC = () => {
 
         {/* Paso 2 */}
         <VStack spacing={4}>
-          <Icon as={CheckIcon} w={8} h={8} color="blackAlpha.700" />
+          <Icon as={BsCheck} w={8} h={8} color="blackAlpha.700" />
           <Text textAlign="center" color={textColor}>
             Reservá directo con el dueño. Enviá un mensaje por WhatsApp 
             y aboná con Mercado Pago.
@@ -40,7 +41,7 @@ const HowItWorks: React.FC = () => {
 
         {/* Paso 3 */}
         <VStack spacing={4}>
-          <Icon as={ExternalLinkIcon} w={8} h={8} color="blackAlpha.700" />
+          <Icon as={BsBackpack} w={8} h={8} color="blackAlpha.700" />
           <Text textAlign="center" color={textColor}>
             Una vez confirmada tu reserva ¡solo queda armar la mochila!
           </Text>
