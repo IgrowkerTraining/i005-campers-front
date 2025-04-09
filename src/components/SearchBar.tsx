@@ -1,31 +1,41 @@
-// src/components/SearchBar.tsx
 import React from 'react';
-import { Input, InputGroup, InputRightElement, IconButton } from '@chakra-ui/react';
+import { Input, InputGroup, InputRightElement, IconButton, Icon, Box } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
+import { BiFilter } from 'react-icons/bi'; // Importa el ícono BiFilter
 
 const SearchBar: React.FC = () => {
   return (
-    <InputGroup size="md" width={{ base: '90%', md: 'lg' }} mx="auto" my={4}>
-      <Input
-        pr="4.5rem" // Espacio para el botón icono
-        type="text"
-        placeholder="Buscar camping"
-        borderRadius="md" // Bordes redondeados
-        borderColor="gray.300"
-        _hover={{ borderColor: 'gray.400' }}
-        focusBorderColor="teal.500" // Color del borde al enfocar
-      />
-      <InputRightElement width="4.5rem">
-        <IconButton
-          h="1.75rem"
-          size="sm"
-          aria-label="Buscar camping"
-          icon={<SearchIcon />}
-          colorScheme="teal" // Usa un color scheme que coincida con la imagen
-          // onClick={() => console.log('Buscar...')} // Aquí iría la lógica de búsqueda
+    <Box display="flex" gap="4" width={{ base: '90%', md: 'lg' }} mx="auto" my={4}>
+      <InputGroup size="md">
+        <Input
+          type="text"
+          placeholder="Buscar camping"
+          borderRadius="md" 
+          borderColor="gray.300"
+          _hover={{ borderColor: 'gray.400' }}
+          focusBorderColor="primary.main" 
+          bg="primary.light" 
+        />
+        <InputRightElement>
+          <IconButton
+            aria-label="Buscar"
+            icon={<SearchIcon />}
+            variant="unstyled" 
+            color="gray.500" 
+            _hover={{ color: 'gray.700' }} 
           />
-      </InputRightElement>
-          </InputGroup>
+        </InputRightElement>
+      </InputGroup>
+      <IconButton
+        aria-label="Filtrar"
+        icon={<Icon as={BiFilter} />} 
+        bg="secondary.main" 
+        color="white" 
+        borderRadius="md" 
+        _hover={{ bg: 'secondary.accent' }} 
+        _active={{ bg: 'secondary.accent' }} 
+      />
+    </Box>
   );
 };
 
