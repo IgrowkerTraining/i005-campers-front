@@ -3,6 +3,7 @@ import { Navbar } from '@/components/Navbar.tsx';
 import { Footer } from '@/components/Footer';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
+import SearchBar from '@/components/SearchBar';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         align="stretch" 
     >
     <Navbar />
-    {/* <div ><strong>header</strong> <Link to="/">Home</Link> <Link to="/about">About</Link></div> */}
+   <SearchBar />
     <Box 
         as="main"
         flex={1}

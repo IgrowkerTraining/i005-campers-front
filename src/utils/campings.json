@@ -1,0 +1,105 @@
+{
+    "campings": [
+      {
+        "nombre": "Camping Los Andes",
+        "ubicacion": "Mendoza, Argentina",
+        "link_mapa": "https://maps.example.com/losandes",
+        "contacto": "+54 261 123 4567",
+        "descripcion": "Camping con vista a la majestuosa Cordillera de los Andes.",
+        "imagen": "https://example.com/images/losandes.jpg",
+        "servicios": ["duchas", "wifi", "parrillas", "pileta"],
+        "tarifas": "Desde $3,000 ARS/noche"
+      },
+      {
+        "nombre": "Lago Escondido",
+        "ubicacion": "Bariloche, Río Negro, Argentina",
+        "link_mapa": "https://maps.example.com/lagoescondido",
+        "contacto": "+54 294 123 7890",
+        "descripcion": "Camping rodeado de bosques y junto al tranquilo Lago Escondido.",
+        "imagen": "https://example.com/images/lagoescondido.jpg",
+        "servicios": ["baños", "proveeduría", "excursiones", "estacionamiento"],
+        "tarifas": "Desde $4,500 ARS/noche"
+      },
+      {
+        "nombre": "Camping La Pampa",
+        "ubicacion": "Santa Rosa, La Pampa, Argentina",
+        "link_mapa": "https://maps.example.com/lapampa",
+        "contacto": "+54 2954 654 321",
+        "descripcion": "Una opción familiar en pleno corazón de la región pampeana.",
+        "imagen": "https://example.com/images/lapampa.jpg",
+        "servicios": ["duchas", "parrillas", "cancha de fútbol", "wifi"],
+        "tarifas": "Desde $2,800 ARS/noche"
+      },
+      {
+        "nombre": "Quebrada del Camping",
+        "ubicacion": "Tilcara, Jujuy, Argentina",
+        "link_mapa": "https://maps.example.com/quebradadelcamping",
+        "contacto": "+54 388 123 4567",
+        "descripcion": "Camping pintoresco en la mágica Quebrada de Humahuaca.",
+        "imagen": "https://example.com/images/quebradadelcamping.jpg",
+        "servicios": ["excursiones", "baños", "alquiler de cargas", "duchas"],
+        "tarifas": "Desde $3,200 ARS/noche"
+      },
+      {
+        "nombre": "Camping El Dorado",
+        "ubicacion": "San Ignacio, Misiones, Argentina",
+        "link_mapa": "https://maps.example.com/eldorado",
+        "contacto": "+54 376 987 1234",
+        "descripcion": "Un paraíso tropical cerca de las ruinas jesuíticas.",
+        "imagen": "https://example.com/images/eldorado.jpg",
+        "servicios": ["pileta", "yoga", "proveeduría", "parrillas"],
+        "tarifas": "Desde $3,700 ARS/noche"
+      },
+      {
+        "nombre": "Costa Serena",
+        "ubicacion": "Villa La Angostura, Neuquén, Argentina",
+        "link_mapa": "https://maps.example.com/costaserena",
+        "contacto": "+54 294 456 7891",
+        "descripcion": "Camping a orillas del Lago Nahuel Huapi con vistas inmejorables.",
+        "imagen": "https://example.com/images/costaserena.jpg",
+        "servicios": ["wifi", "excursiones", "parrillas", "duchas"],
+        "tarifas": "Desde $5,000 ARS/noche"
+      },
+      {
+        "nombre": "Camping El Horizonte",
+        "ubicacion": "San Carlos de Bolívar, Buenos Aires, Argentina",
+        "link_mapa": "https://maps.example.com/elhorizonte",
+        "contacto": "+54 2314 123 987",
+        "descripcion": "Camping en la llanura bonaerense ideal para un escape tranquilo.",
+        "imagen": "https://example.com/images/elhorizonte.jpg",
+        "servicios": ["estacionamiento", "proveeduría", "baños", "duchas"],
+        "tarifas": "Desde $2,500 ARS/noche"
+      },
+      {
+        "nombre": "Rinconcito de Montaña",
+        "ubicacion": "El Bolsón, Río Negro, Argentina",
+        "link_mapa": "https://maps.example.com/rinconcitodemontana",
+        "contacto": "+54 294 567 1234",
+        "descripcion": "Un refugio natural con vistas impresionantes de la Patagonia.",
+        "imagen": "https://example.com/images/rinconcitodemontana.jpg",
+        "servicios": ["cancha de fútbol", "excursiones", "duchas", "pileta"],
+        "tarifas": "Desde $4,200 ARS/noche"
+      },
+      {
+        "nombre": "Camping Los Tamarindos",
+        "ubicacion": "San Juan, Argentina",
+        "link_mapa": "https://maps.example.com/lostamarindos",
+        "contacto": "+54 264 789 1234",
+        "descripcion": "Camping con vegetación típica de la región y ambiente familiar.",
+        "imagen": "https://example.com/images/lostamarindos.jpg",
+        "servicios": ["parrillas", "duchas", "wifi", "proveeduría"],
+        "tarifas": "Desde $2,900 ARS/noche"
+      },
+      {
+        "nombre": "Valle Encantado",
+        "ubicacion": "Cafayate, Salta, Argentina",
+        "link_mapa": "https://maps.example.com/valleencantado",
+        "contacto": "+54 387 654 3210",
+        "descripcion": "Camping boutique rodeado de viñedos y naturaleza.",
+        "imagen": "https://example.com/images/valleencantado.jpg",
+        "servicios": ["duchas", "wifi", "yoga", "pileta"],
+        "tarifas": "Desde $5,500 ARS/noche"
+      }
+    ]
+  }
+  

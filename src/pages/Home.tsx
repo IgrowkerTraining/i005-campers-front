@@ -19,7 +19,7 @@ function Home() {
   
   return (
     <MainLayout>
-      <SearchBar />
+     
       <WelcomeSection />
       <HowItWorks />
       <PromoteCamping />
