@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@chakra-ui/react';
 
 interface ButtonBookingProps {
-  campingName: "dsad";
-  contactNumber: "adsad"; 
+  campingName: string;
+  contactNumber: string; 
 }
 
 const ButtonBooking: React.FC<ButtonBookingProps> = ({ campingName, contactNumber }) => {
@@ -15,8 +15,8 @@ const ButtonBooking: React.FC<ButtonBookingProps> = ({ campingName, contactNumbe
   return (
     <Button
       bg="secondary.main"
-      color="white"
-      _hover="secondary.accent"
+      color="white" 
+      _hover={{ bg: "primary.main", color: "white" }}
       size="lg"
       onClick={() => window.open(enlaceWhatsApp, '_blank')}
     >

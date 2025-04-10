@@ -5,7 +5,6 @@ import { Footer } from '@/components/Footer';
 // import Footer from '../components/Footer';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '@/components/SearchBar';
 interface MainLayoutProps {
   children: ReactNode;
 }
@@ -18,7 +17,6 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         align="stretch" 
     >
     <Navbar />
-    <SearchBar/>
     {/* <div ><strong>header</strong> <Link to="/">Home</Link> <Link to="/about">About</Link></div> */}
     <Box 
         as="main"
