@@ -1,6 +1,6 @@
 import MainLayout from '@/layouts/MainLayout';
-import SearchBar from '@/components/SearchBar';
 import WelcomeSection from '@/components/WelcomeSection';
+import SearchBar from '@/components/SearchBar';
 import HowItWorks from '@/components/HowItWorks';
 import PromoteCamping from '@/components/PromoteCamping';
 
@@ -19,7 +19,7 @@ function Home() {
   
   return (
     <MainLayout>
-      <SearchBar />
+      <SearchBar/>
       <WelcomeSection />
       <HowItWorks />
       <PromoteCamping />
