@@ -9,7 +9,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import logo from "../assets/Fotter-logo.png";
+import logo from "../assets/fotter-logo.png";
 import name from "../assets/footer-name.png";
 
 export const Footer = () => {
