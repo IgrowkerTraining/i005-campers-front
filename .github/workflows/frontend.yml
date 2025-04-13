@@ -22,12 +22,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd frontend
+          cd i005-campers-front
           npm install
 
       - name: Build React app
         run: |
-          cd frontend
+          cd i005-campers-front
           npm run build
 
       - name: Authenticate with GCP
