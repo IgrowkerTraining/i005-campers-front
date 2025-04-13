@@ -1,0 +1,40 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    paths:
+      - 'i005-campers-front/**'
+    branches:
+      - main
+
+jobs:
+  frontend-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build React app
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Authenticate with GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY_FR }}
+
+      - name: Upload to GCP Bucket
+        run: |
+          gsutil -m rsync -r frontend/build gs://$GCP_BUCKET_NAME
