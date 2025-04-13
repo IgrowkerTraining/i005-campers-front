@@ -37,4 +37,4 @@ jobs:
 
       - name: Upload to GCP Bucket
         run: |
-          gsutil -m rsync -r frontend/build gs://$GCP_BUCKET_NAME
+          gsutil -m rsync -r i005-campers-front/build gs://$GCP_BUCKET_NAME
