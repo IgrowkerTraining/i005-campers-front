@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Box, Heading, Spinner, Text, VStack, Image } from '@chakra-ui/react';
 import MainLayout from '@/layouts/MainLayout';
-import { useCampingStore } from '@/store/campingStore';
+import { useCampingStore } from '@/store/CampingStore';
 import campingImage from '@/assets/camping/camping1.jpg';
-import { CampingType } from '@/store/campingStore';
+import { CampingType } from '@/store/CampingStore';
 
 function About() {
   const { campings, isLoading, error, fetchCampings  } = useCampingStore();
