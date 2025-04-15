@@ -4,6 +4,7 @@ import About from '../pages/About';
 import Camping from '@/pages/Camping';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
+import { Search } from '@/pages/Search';
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
   },
   {
     path: '/search',
-    element: <Search />,
+    element: <Search/>,
   },
 ]);
 
