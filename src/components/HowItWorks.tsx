@@ -7,7 +7,7 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { SearchIcon, CheckIcon } from "@chakra-ui/icons";
+
 import { BsSearch, BsCheck, BsBackpack } from "react-icons/bs"; 
 
 const HowItWorks: React.FC = () => {
