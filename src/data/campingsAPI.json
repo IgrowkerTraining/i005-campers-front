@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "name": "Camping Paradise",
+      "description": "Un camping con todas las comodidades",
+      "locationId": 1,
+      "nearNature": [
+        "playa",
+        "bosque"
+      ],
+      "limitCampingId": 1,
+      "userId": "1569d405-b3ed-4fee-8784-3eaaa583dec2",
+      "createdAt": "2025-04-10T20:02:13.498Z",
+      "updatedAt": "2025-04-10T20:02:13.498Z",
+      "location": {
+        "id": 1,
+        "city": "Costa Azul",
+        "region": "Costa del Sol",
+        "country": "España",
+        "coordinates": "{\"lat\":40.2458,\"lng\":-3.9238}"
+      },
+      "pricing": [
+        {
+          "id": 1,
+          "pricePerNight": 50,
+          "season": "Verano",
+          "campingId": 1
+        }
+      ],
+      "amenities": [
+        {
+          "id": 1,
+          "name": "Piscina",
+          "available": true
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "id": 1,
+          "name": "Playa Dorada",
+          "type": "playa",
+          "distance": 0.5,
+          "campingId": 1
+        }
+      ]
+    }
+  ]

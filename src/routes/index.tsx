@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Camping from '@/pages/Camping';
-import { SearchResults } from '@/pages/SearchResults';
+import { Search } from '@/pages/Search';
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
   },
   {
     path: '/search',
-    element: <SearchResults />,
+    element: <Search />,
   },
 ]);
 

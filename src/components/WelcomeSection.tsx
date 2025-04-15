@@ -7,11 +7,20 @@ import {
   VStack,
   HStack,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 import CustomButton from './CustomButton';
 import imageUrl from '../assets/welcome.jpg';
 
 const WelcomeSection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleRegister = () =>{
+    navigate('/registro');
+  };
+  const handleLogin = () =>{
+    navigate('/login');
+  };
   return (
     <VStack spacing={8} align="stretch" maxWidth="container.lg" mx="auto">
       {/* Sección de Texto y Botones */}
@@ -30,8 +39,8 @@ const WelcomeSection: React.FC = () => {
             complicaciones. Viajar y hospedar nunca fue tan simple.
           </Text>
           <HStack spacing={4} justify="center" width="100%" pt={4}>
-            <CustomButton variant="dark">Registrarse</CustomButton>
-            <CustomButton variant="light">Iniciar sesión</CustomButton>
+            <CustomButton variant="dark" onClick={handleRegister}>Registrarse</CustomButton>
+            <CustomButton variant="light" onClick={handleLogin}>Iniciar sesión</CustomButton>
           </HStack>
         </VStack>
       </Box>
