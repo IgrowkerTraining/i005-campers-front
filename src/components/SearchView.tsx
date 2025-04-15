@@ -82,7 +82,6 @@ const CampingSearch: React.FC<CampingSearchProps> = ({
             size={buttonSize}
             variant="outline"
             colorScheme="teal"
-            bg="#b3e0d3"
             onClick={() => onFilterChange(filter)}
             whiteSpace="nowrap"
           >
@@ -90,7 +89,7 @@ const CampingSearch: React.FC<CampingSearchProps> = ({
           </Button>
         ))}
       </HStack>
-      
+
       <Box mb={4}>
         <Text fontSize={fontSizeTitle} fontWeight="bold" mb={2}>
           Encuentra tu próxima aventura
@@ -203,5 +202,6 @@ const SearchView: React.FC = () => {
     />
   );
 };
+
 
 export default SearchView;

@@ -53,9 +53,10 @@ interface CampingStore {
   isLoading: boolean;
   error: string | null;
   fetchCampings: () => Promise<void>;
+  fetchCampingById: (id: number) => Promise<CampingType | null>;
 }
 
-export const useCampingStore = create<CampingStore>((set) => ({
+export const useCampingStore = create<CampingStore>((set, get) => ({
   campings: [],
   isLoading: false,
   error: null,
@@ -68,4 +69,18 @@ export const useCampingStore = create<CampingStore>((set) => ({
       set({ error: error.message || 'Error fetching campings', isLoading: false });
     }
   },
+  fetchCampingById: async (id: number): Promise<CampingType | null> => {
+    try {
+      const  campings  = get().campings;
+      console.log(campings)
+      return campings.find((camping) => camping.id === id) || null;
+    } catch (error) {
+      set({ error: 'Error fetching camping by ID' });
+      return null;
+    }
+  }
 }));
+
+
+
+

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Image, IconButton, Flex } from '@chakra-ui/react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Box, Image, Flex } from '@chakra-ui/react';
+
 
 type ImageCarouselProps = {
   images: string[];
@@ -15,10 +15,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, autoSlideInterval
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  // Cambiar a la imagen anterior
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  // // Cambiar a la imagen anterior
+  // const prevSlide = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  // };
 
   // cambio automático de imágenes cada 3 segundos
   useEffect(() => {
