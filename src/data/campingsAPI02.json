@@ -1,0 +1,44 @@
+{
+    "name": "Camping Negro",
+    "description": "pescadores y familias.",
+    "contactPhone": "6677-5949",
+    "location": {
+      "campingAddress": "Ruta 12 km 45, Villa General Belgrano, Malaga",
+      "mapLink": "https://maps.app.goo.gl/ejemplo123"
+    },
+    "media": [
+      {
+        "url": "https://bucket.com/rio-verde/entrada.jpg",
+        "type": "image"
+      },
+      {
+        "url": "https://bucket.com/rio-verde/tour.mp4",
+        "type": "video"
+      }
+    ],
+    "pricing": [
+      {
+        "pricePerNight": 12,
+        "tarifa": "paseDiario"
+      },
+  
+      {
+        "pricePerNight": 5,
+        "tarifa": "carpa"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "bar"
+      }
+    ],
+    "nearbyAttractions": [
+      {
+        "name": "tirolina"
+      }
+    ],
+    "limitCamping": {
+      "maxTents": 2,
+      "maxUsers": 9
+    }
+  }

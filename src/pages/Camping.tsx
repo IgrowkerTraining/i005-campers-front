@@ -16,12 +16,13 @@ import {
 } from '@chakra-ui/react';
 import { useCampingStore } from '@/store/CampingStore';
 import {CampingType} from '@/store/CampingStore'
-import { FaMapMarkerAlt, FaWifi, FaShower, FaParking, FaUtensils, FaStar } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaStar } from 'react-icons/fa';
 
 import MainLayout from '@/layouts/MainLayout';
 import ImageCarousel from '@/components/ImageCarousel';
 import ButtonBooking from '@/components/ButtonBooking';
 import ReviewCard from '@/components/ViewCamping/ReviewCard';
+import AmenityItem from '@/components/ViewCamping/AmenityItem';
 
 import image1 from '@/assets/camping/camping1.jpg';
 import image2 from '@/assets/camping/camping2.jpg';
@@ -68,7 +69,9 @@ function Camping() {
       <Box p={4}>
       <VStack align="start" spacing={2}>
             <HStack width="100%" justify="space-between">
-            <Heading size="lg"  fontWeight="semibold" fontSize="20px">{camping.name}</Heading>
+            <Heading size="lg"  fontWeight="semibold" fontSize="20px">
+              {camping.name}
+            </Heading>
             <HStack>
               <Icon as={FaStar} color="orange.400" />
               <Text fontSize="lg">
@@ -97,22 +100,14 @@ function Camping() {
 
         {/* Comodidades */}
         <Wrap spacing={4} mt={4}>
-            <WrapItem alignItems="center">
-            <Icon as={FaWifi} color="green.500" mr={2}/>
-            <Text>Wifi gratis</Text>
-            </WrapItem>
-          <WrapItem alignItems="center">
-            <Icon as={FaShower} color="green.500" mr={2} />
-            <Text>Duchas</Text>
-          </WrapItem>
-          <WrapItem alignItems="center">
-            <Icon as={FaParking} color="green.500" mr={2} />
-            <Text>Parking</Text>
-          </WrapItem>
-          <WrapItem alignItems="center">
-            <Icon as={FaUtensils} color="green.500" mr={2} />
-            <Text>Parrillas</Text>
-          </WrapItem>
+        {camping.amenities.map((amenity) => (
+          <AmenityItem
+            key={amenity.id}
+            id={amenity.id}
+            name={amenity.name}
+            icon={amenity.icon} 
+          />
+        ))}
           <WrapItem alignItems="center">
             <Button variant="link" color="green.500" mr={2}>
               Ver más
@@ -158,8 +153,6 @@ function Camping() {
           </Button>
         </HStack>
         <VStack align="start" spacing={4}>
-
-
             {reviews
               .filter((review) => review.campingId === Number(id)) // Filtrar por campingId
               .map((review, index) => (
@@ -172,17 +165,14 @@ function Camping() {
                 comment={review.comment}
                 imageProfileUrl={imageProfileUrl} 
               />
-              ))}
-          
+              ))}          
         </VStack>
-
         <Divider my={6} />
-
         {/* Precio y botón de reservar */}
         <HStack justify="space-between" mt={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            $5.000/noche
-          </Text>
+            <Text fontSize="2xl" fontWeight="bold">            
+              €{camping.pricing[0].pricePerNight} / noche
+            </Text>
           <ButtonBooking campingName="Prueba de camping" contactNumber="123-456-7890" />
         </HStack>
       </Box>

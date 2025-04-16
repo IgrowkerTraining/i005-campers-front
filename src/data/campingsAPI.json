@@ -30,7 +30,32 @@
     "amenities": [
       {
         "id": 1,
+        "name": "Wifi gratis",
+        "icon": "FaWifi",
+        "available": true
+      },
+      {
+        "id": 2,
+        "name": "Duchas",
+        "icon": "FaShower",
+        "available": true
+      },
+      {
+        "id": 3,
+        "name": "Parking",
+        "icon": "FaParking",
+        "available": true
+      },
+      {
+        "id": 4,
+        "name": "Parrillas",
+        "icon": "FaUtensils",
+        "available": true
+      },
+      {
+        "id": 5,
         "name": "Piscina",
+        "icon": "FaSwimmingPool",
         "available": true
       }
     ],
@@ -74,13 +99,39 @@
     ],
     "amenities": [
       {
+        "id": 1,
+        "name": "Wifi gratis",
+        "icon": "FaWifi",
+        "available": true
+      },
+      {
         "id": 2,
-        "name": "Chimenea",
+        "name": "Duchas",
+        "icon": "FaShower",
         "available": true
       },
       {
         "id": 3,
+        "name": "Parking",
+        "icon": "FaParking",
+        "available": true
+      },
+      {
+        "id": 4,
+        "name": "Parrillas",
+        "icon": "FaUtensils",
+        "available": true
+      },
+      {
+        "id": 5,
+        "name": "Chimenea",
+        "icon": "FaFire",
+        "available": true
+      },
+      {
+        "id": 6,
         "name": "Senderos marcados",
+        "icon": "FaHiking",
         "available": true
       }
     ],
@@ -124,13 +175,39 @@
     ],
     "amenities": [
       {
+        "id": 1,
+        "name": "Wifi gratis",
+        "icon": "FaWifi",
+        "available": true
+      },
+      {
+        "id": 2,
+        "name": "Duchas",
+        "icon": "FaShower",
+        "available": true
+      },
+      {
+        "id": 3,
+        "name": "Parking",
+        "icon": "FaParking",
+        "available": true
+      },
+      {
         "id": 4,
-        "name": "Kayaks",
+        "name": "Parrillas",
+        "icon": "FaUtensils",
         "available": true
       },
       {
         "id": 5,
+        "name": "Kayaks",
+        "icon": "FaWater",
+        "available": true
+      },
+      {
+        "id": 6,
         "name": "Zona de pesca",
+        "icon": "FaFish",
         "available": true
       }
     ],
