@@ -19,7 +19,7 @@ function Home() {
   
   return (
     <MainLayout>
-      <SearchBar/>
+      <SearchBar onSearch={(query) => console.log('Buscando:', query)}/>
       <WelcomeSection />
       <HowItWorks />
       <PromoteCamping />
