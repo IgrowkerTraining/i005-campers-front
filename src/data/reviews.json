@@ -1,0 +1,34 @@
+[
+    {
+        "campingId": 1,
+        "name": "Sofía Hernández García",
+        "date": "22/3/2025",
+        "comment": "Muy bueno, se los recomiendo",
+        "rating": 4.8,
+        "profilePic": "perfil01.jpg"
+    },
+    {
+        "campingId": 1,
+        "name": "Valentín López Martínez",
+        "date": "22/3/2025",
+        "comment": "¡Excelente experiencia! Definitivamente los recomiendo, es un lugar increíble.",
+        "rating": 3.8,
+        "profilePic": "perfil02.jpg"
+    },
+    {
+        "campingId": 2,
+        "name": "Juan Carlos Petela González",
+        "date": "23/3/2025",
+        "comment": "Un lugar mágico, perfecto para desconectar.",
+        "rating": 5.0,
+        "profilePic": "perfil03.jpg"
+    },
+    {
+        "campingId": 3,
+        "name": "Javier Gómez Pérez",
+        "date": "23/3/2025",
+        "comment": "Buena atención, pero podría mejorar la limpieza.",
+        "rating": 3.5,
+        "profilePic": "perfil04.jpg"
+    }
+]

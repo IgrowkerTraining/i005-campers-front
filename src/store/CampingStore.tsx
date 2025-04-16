@@ -22,6 +22,7 @@ interface Amenity {
   id: number;
   name: string;
   available: boolean;
+  icon: string; 
 }
 
 interface NearbyAttraction {
