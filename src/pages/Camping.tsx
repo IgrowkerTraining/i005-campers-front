@@ -13,8 +13,8 @@ import {
   Divider,
   Spinner,
 } from '@chakra-ui/react';
-import { useCampingStore } from '@/store/campingStore';
-import {CampingType} from '@/store/campingStore'
+import { useCampingStore } from '@/store/CampingStore';
+import {CampingType} from '@/store/CampingStore'
 import { FaMapMarkerAlt, FaWifi, FaShower, FaParking, FaUtensils } from 'react-icons/fa';
 
 import MainLayout from '@/layouts/MainLayout';
