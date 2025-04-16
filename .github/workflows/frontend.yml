@@ -30,4 +30,4 @@ jobs:
 
       - name: Upload to GCP Bucket
         run: |
-          gsutil -m rsync -r ./dist gs://$GCP_BUCKET_NAME
+          gsutil -m cp -r ./dist gs://$GCP_BUCKET_NAME
