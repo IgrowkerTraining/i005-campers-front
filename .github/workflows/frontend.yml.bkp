@@ -1,0 +1,33 @@
+name: Frontend CI/CD to GCP Bucket
+
+on:
+  push:
+    paths:
+      - 'i005-campers-front/**'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build frontend using Docker
+        run: |
+          docker build -t frontend-builder .
+          docker create --name extract-builder frontend-builder
+          docker cp extract-builder:/app/dist ./dist
+          docker rm extract-builder
+
+      - name: Authenticate with GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY_FR }}
+
+      - name: Upload to GCP Bucket
+        run: |
+          gsutil -m rsync -r ./dist gs://$GCP_BUCKET_NAME
