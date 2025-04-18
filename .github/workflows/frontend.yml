@@ -42,4 +42,4 @@ jobs:
       - name: 🌍 Configurar sitio como página web (opcional, solo la primera vez)
         run: |
           BUCKET=${{ env.PROD_BUCKET }}
-          gsutil web set -m index.html -e index.html gs://$campers-front
+          gsutil web set -m index.html -e index.html gs://campers-front
