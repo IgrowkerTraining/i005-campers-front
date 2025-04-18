@@ -11,7 +11,7 @@ on:
 env:
   PROJECT_ID: training-batch-05
   REGION: us-east1
-  PROD_BUCKET: campers-front
+  PROD_BUCKET: gs://campers-front
 
 jobs:
   deploy:
