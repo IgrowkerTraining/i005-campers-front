@@ -36,7 +36,7 @@ jobs:
       - name: 🪣 Subir archivos al bucket
         run: |
           BUCKET=${{ env.PROD_BUCKET }}
-          gsutil -m rsync -r build gs://campers-front
+          gsutil -m rsync -r ./dist gs://campers-front
           gsutil -m setmeta -h "Cache-Control:no-cache" gs://campers-front/**
 
       - name: 🌍 Configurar sitio como página web (opcional, solo la primera vez)
