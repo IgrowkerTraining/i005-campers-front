@@ -36,10 +36,10 @@ jobs:
       - name: 🪣 Subir archivos al bucket
         run: |
           BUCKET=${{ env.PROD_BUCKET }}
-          gsutil -m rsync -r build gs://$BUCKET
-          gsutil -m setmeta -h "Cache-Control:no-cache" gs://$BUCKET/**
+          gsutil -m rsync -r build gs://campers-front
+          gsutil -m setmeta -h "Cache-Control:no-cache" gs://campers-front/**
 
       - name: 🌍 Configurar sitio como página web (opcional, solo la primera vez)
         run: |
           BUCKET=${{ env.PROD_BUCKET }}
-          gsutil web set -m index.html -e index.html gs://$BUCKET
+          gsutil web set -m index.html -e index.html gs://$campers-front
