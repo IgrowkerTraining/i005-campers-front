@@ -1,19 +1,30 @@
 import { Box } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import LoginComponent from '@/components/Componentlogin';
+import { useUserStore } from '@/store/userStore';
 
-interface LoginCredentials {
-  email: string;
-  password: string;
-}
 
-const handleLogin = (email: LoginCredentials['email'], password: LoginCredentials['password']): void => {
-  console.log('Login attempted with:', email, password);
-}
 function Login() {
+  const { login, isLoading, error } = useUserStore();
+  const navigate = useNavigate();
+
+  const handleLogin = async (email: string, password: string) => {
+    try {
+      await login({ email, password });
+      navigate('/search'); 
+    } catch (error) {
+      console.error('Error en el login:', error);
+    }
+  };
+
   return (
-      <Box p={4} >
-        <LoginComponent onLogin={handleLogin} />
-      </Box>
+    <Box p={4}>
+      <LoginComponent 
+        onLogin={handleLogin}
+        isLoading={isLoading}
+        error={error}
+      />
+    </Box>
   );
 }
 
