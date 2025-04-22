@@ -17,15 +17,15 @@ axiosInstance.interceptors.request.use((config) => {
   return config;
 });
 
-interface ApiResponse<T> {
-  data: T[];
-  meta: {
-    total: number;
-    page: number;
-    limit: number;
-    totalPages: number;
-  };
-}
+// interface ApiResponse<T> {
+//   data: T[];
+//   meta: {
+//     total: number;
+//     page: number;
+//     limit: number;
+//     totalPages: number;
+//   };
+// }
 
 export const campingService = {
   fetchCampings: async (): Promise<CampingType[]> => {

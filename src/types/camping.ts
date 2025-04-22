@@ -2,6 +2,8 @@ export interface Location {
   id: number;
   campingAddress: string;
   mapLink: string;
+  city: string;
+  country: string;
 }
 
 export interface Pricing {

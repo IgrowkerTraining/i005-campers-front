@@ -15,7 +15,7 @@ interface CampingStore {
   searchCampings: (params: SearchParams) => Promise<void>;
 }
 
-export const useCampingStore = create<CampingStore>((set, get) => ({
+export const useCampingStore = create<CampingStore>((set) => ({
   campings: [],
   isLoading: false,
   error: null,
