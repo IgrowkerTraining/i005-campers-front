@@ -23,6 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";// Icono del ojo simple
 import icon from "@/assets/Icongreen.png";
 import iconNa from "@/assets/namegreen.png";
+import { userService } from '@/services/userService';
 
 const RegisterComponent: React.FC = () => {
     const [email, setEmail] = useState<string>("");
@@ -31,16 +32,36 @@ const RegisterComponent: React.FC = () => {
     const [role, setRole] = useState<string>("discover"); // Estado para selección de rol
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [error, setError] = useState<string>("");
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const navigate = useNavigate();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (email === "" || password === "" || name === "") {
             setError("Por favor, completa todos los campos.");
-        } else {
+            return;
+        }
+
+        try {
+            setIsLoading(true);
             setError("");
-            console.log("Registro completado con:", { name, email, password, role });
-            //falta implementar la lógica para registrar al usuario.
+            
+            const registerData = {
+                email,
+                name,
+                password,
+                owner: role === 'host'
+            };
+
+            const response = await userService.register(registerData);
+            console.log('Usuario registrado:', response);
+            
+            // Redirigir al login después del registro exitoso
+            navigate('/login');
+        } catch (error: any) {
+            setError(error.message || 'Error al registrar usuario');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -137,6 +158,8 @@ const RegisterComponent: React.FC = () => {
                         bg="primary.main"
                         _hover={{ bg: "secondary.accent" }}
                         width="full"
+                        isLoading={isLoading}
+                        loadingText="Registrando..."
                     >
                         Regístrate ahora
                     </Button>

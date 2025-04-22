@@ -1,18 +1,25 @@
 import logo from '../assets/navbar-icon.png';
-
 import { Box, Image, Flex, Menu, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react';
 import { FiMenu } from "react-icons/fi";
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserStore } from '@/store/userStore';
 
-export const Navbar = () => {
+export const Navbar = () => {    
+    const user = JSON.parse(localStorage.getItem('Campers-user') || '{}');
+    const isOwner = localStorage.getItem('Campers-owner') === 'true';
+    const { logout } = useUserStore();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
+
     return (
         <Box bg={'white'} p={6}>
             <Flex justifyContent={'space-between'}>
-                {/* Imagen del logo */}
                 <Image src={logo} alt="campers logo" w="200px" />
-
-                 {/* Menú desplegable */}
                 <Menu>
-                    {/* Botón del menú que activa el menú desplegable */}
                     <MenuButton
                         as={IconButton}
                         icon={<FiMenu />}
@@ -22,15 +29,25 @@ export const Navbar = () => {
                         alignItems="center" 
                         border="none"
                     />
-                    {/* Lista de elementos del menú */}
                     <MenuList>
-                        <MenuItem>Inicio</MenuItem>
-                        <MenuItem>Regístrate/Inicia sesión</MenuItem>
-                        <MenuItem>Buscar Campings</MenuItem>
-                        <MenuItem>Registro de Camping</MenuItem>
+                        {!user.id ? (
+                            <>
+                                <MenuItem as={Link} to="/">Inicio</MenuItem>
+                                <MenuItem as={Link} to="/registro">Registrarse</MenuItem>
+                                <MenuItem as={Link} to="/login">Iniciar sesión</MenuItem>
+                            </>
+                        ) : (
+                            <>
+                                <MenuItem as={Link} to="/search">Buscar Campings</MenuItem>
+                                {isOwner && (
+                                    <MenuItem as={Link} to="/register-camping">Registro de Camping</MenuItem>
+                                )}
+                                <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
+                            </>
+                        )}
                     </MenuList>
                 </Menu>
             </Flex>
         </Box>
-    )
-}
+    );
+};
