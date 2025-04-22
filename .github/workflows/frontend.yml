@@ -1,32 +1,45 @@
-name: Frontend CI/CD to GCP Bucket
+name: Deploy Frontend
 
 on:
   push:
-    paths:
-      - 'i005-campers-front/**'
-    branches:
-      - main
+    branches: 
+      -  main 
+      - develop 
+      - 'feature/*'
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: training-batch-05
+  REGION: us-east1
+  PROD_BUCKET: gs://campers-front
 
 jobs:
-  build-and-upload:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 📥 Clonar el código
         uses: actions/checkout@v3
 
-      - name: Build frontend using Docker
-        run: |
-          docker build -t frontend-builder ./i005-campers-front
-          docker create --name extract-builder frontend-builder
-          docker cp extract-builder:/app/dist ./dist
-          docker rm extract-builder
+      - name: 🛠️ Instalar dependencias
+        run: npm install
 
-      - name: Authenticate with GCP
-        uses: google-github-actions/auth@v2
+      - name: 🏗️ Construir el sitio (React)
+        run: npm run build
+
+      - name: 🔐 Autenticarse con GCP
+        uses: google-github-actions/setup-gcloud@v1
         with:
+          project_id: ${{ env.PROJECT_ID }}
           credentials_json: ${{ secrets.GCP_SA_KEY_FR }}
 
-      - name: Upload to GCP Bucket
+      - name: 🪣 Subir archivos al bucket
         run: |
-          gsutil -m rsync -r ./dist gs://$GCP_BUCKET_NAME
+          BUCKET=${{ env.PROD_BUCKET }}
+          gsutil -m rsync -r ./dist gs://campers-front
+          gsutil -m setmeta -h "Cache-Control:no-cache" gs://campers-front/**
+
+      - name: 🌍 Configurar sitio como página web (opcional, solo la primera vez)
+        run: |
+          BUCKET=${{ env.PROD_BUCKET }}
+          gsutil web set -m index.html -e index.html gs://campers-front

@@ -1,6 +1,7 @@
 import { Box, Text, Flex, VStack, Image, Spinner } from '@chakra-ui/react';
 import { useCampingStore } from '@/store/CampingStore';
-import { CampingType } from '@/store/CampingStore';
+
+import { CampingType } from '@/types/camping';
 import { useEffect } from 'react';
 
 const CampingResults: React.FC = () => {
