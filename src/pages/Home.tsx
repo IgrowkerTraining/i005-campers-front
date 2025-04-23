@@ -4,6 +4,7 @@ import SearchBar from '@/components/SearchBar';
 import HowItWorks from '@/components/HowItWorks';
 import PromoteCamping from '@/components/PromoteCamping';
 
+
 // const boxStyles = {
 //   p: 4,
 //   bg: 'primary.dark',
