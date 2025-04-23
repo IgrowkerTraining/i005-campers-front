@@ -18,7 +18,7 @@ export const Navbar = () => {
     return (
         <Box bg={'white'} p={6}>
             <Flex justifyContent={'space-between'}>
-                <Image src={logo} alt="campers logo" w="200px" />
+                <Image src={logo}  alt="campers logo" w="200px"  />
                 <Menu>
                     <MenuButton
                         as={IconButton}
@@ -40,7 +40,7 @@ export const Navbar = () => {
                             <>
                                 <MenuItem as={Link} to="/search">Buscar Campings</MenuItem>
                                 {isOwner && (
-                                    <MenuItem as={Link} to="/register-camping">Registro de Camping</MenuItem>
+                                    <MenuItem as={Link} to="/CampingForm">Registro de Camping</MenuItem>
                                 )}
                                 <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
                             </>

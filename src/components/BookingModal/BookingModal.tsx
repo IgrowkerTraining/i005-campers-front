@@ -68,7 +68,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     <Modal isOpen={isOpen} onClose={onClose} isCentered size={{ base: 'xs', md: 'md' }}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Confirmar Reserva - {campingName}</ModalHeader>
+        <ModalHeader>Confirmar Registro - {campingName}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <VStack spacing={4}>
