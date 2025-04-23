@@ -5,6 +5,7 @@ import Camping from '@/pages/Camping';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import SearchView from '@/pages/SearchView';
+import CampingForm from '@/components/CampingForm';
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
   {
     path: '/search',
     element: <SearchView/>,
+  },
+  {
+    path: '/campingform',
+    element: <CampingForm/>,
   },
 ]);
 
