@@ -8,6 +8,7 @@ import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import SearchView from '@/pages/SearchView';
 import CampingForm from '@/components/CampingForm';
+import Successlogin from '@/pages/Successlogin';
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
   {
     path: '/registro-camping',
     element: <CampingForm/>,
+  },
+  {
+    path: '/exito',
+    element: <Successlogin/>,
   },
 ]);
 
