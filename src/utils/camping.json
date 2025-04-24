@@ -12,7 +12,14 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 500 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 700 }
       ],
-      "amenities": ["Duchas", "Wi-Fi", "Pileta"]
+      "amenities": ["Duchas", "Wi-Fi", "Pileta"],
+      "limitCamping": true,
+      "nearbyAttractions": [
+        { "name": "Lago Nahuel Huapi", "distance": "5 km" },
+        { "name": "Cerro Catedral", "distance": "10 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 2,
@@ -33,7 +40,13 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 450 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 600 }
       ],
-      "amenities": ["Wi-Fi", "Excursiones"]
+      "amenities": ["Wi-Fi", "Excursiones"],
+      "limitCamping": false,
+      "nearbyAttractions": [
+        { "name": "Reserva Natural", "distance": "3 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 5,
@@ -48,7 +61,14 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 600 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 850 }
       ],
-      "amenities": ["Parrillas", "Pileta"]
+      "amenities": ["Parrillas", "Pileta"],
+      "limitCamping": true,
+      "nearbyAttractions": [
+        { "name": "Playa Grande", "distance": "2 km" },
+        { "name": "Puerto de Mar del Plata", "distance": "5 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 6,
@@ -63,7 +83,13 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 550 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 750 }
       ],
-      "amenities": ["Excursiones", "Wi-Fi"]
+      "amenities": ["Excursiones", "Wi-Fi"],
+      "limitCamping": false,
+      "nearbyAttractions": [
+        { "name": "Aconcagua", "distance": "30 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 7,
@@ -78,7 +104,13 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 470 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 650 }
       ],
-      "amenities": ["Duchas", "Estacionamiento"]
+      "amenities": ["Duchas", "Estacionamiento"],
+      "limitCamping": true,
+      "nearbyAttractions": [
+        { "name": "Cafayate", "distance": "15 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 8,
@@ -93,7 +125,13 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 400 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 600 }
       ],
-      "amenities": ["Wi-Fi", "Parrillas", "Pileta"]
+      "amenities": ["Wi-Fi", "Parrillas", "Pileta"],
+      "limitCamping": true,
+      "nearbyAttractions": [
+        { "name": "Río Suquía", "distance": "5 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 9,
@@ -108,7 +146,13 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 520 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 710 }
       ],
-      "amenities": ["Yoga", "Wi-Fi"]
+      "amenities": ["Yoga", "Wi-Fi"],
+      "limitCamping": false,
+      "nearbyAttractions": [
+        { "name": "Laguna El Cristal", "distance": "10 km" }
+      ],
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     },
     {
       "id": 10,
@@ -123,37 +167,13 @@
         { "tarifa": "Noche en carpa", "pricePerNight": 480 },
         { "tarifa": "Noche en vehículo", "pricePerNight": 650 }
       ],
-      "amenities": ["Cancha de fútbol", "Estacionamiento"]
-    },
-    {
-      "id": 11,
-      "name": "Camping Paraíso",
-      "description": "En un entorno natural único, para disfrutar de la tranquilidad.",
-      "contactPhone": "+54 9 299 2233445",
-      "location": {
-        "campingAddress": "Ruta 3, Neuquén",
-        "mapLink": "https://maps.app.goo.gl/paraisolink"
-      },
-      "pricing": [
-        { "tarifa": "Noche en carpa", "pricePerNight": 530 },
-        { "tarifa": "Noche en vehículo", "pricePerNight": 710 }
+      "amenities": ["Cancha de fútbol", "Estacionamiento"],
+      "limitCamping": true,
+      "nearbyAttractions": [
+        { "name": "Sierras de Córdoba", "distance": "20 km" }
       ],
-      "amenities": ["Duchas", "Excursiones"]
-    },
-    {
-      "id": 12,
-      "name": "Camping El Sol",
-      "description": "Ideal para disfrutar de días soleados y actividades al aire libre.",
-      "contactPhone": "+54 9 351 6677889",
-      "location": {
-        "campingAddress": "Calle Sol 45, Buenos Aires",
-        "mapLink": "https://maps.app.goo.gl/sollink"
-      },
-      "pricing": [
-        { "tarifa": "Noche en carpa", "pricePerNight": 460 },
-        { "tarifa": "Noche en vehículo", "pricePerNight": 630 }
-      ],
-      "amenities": ["Pileta", "Wi-Fi"]
+      "createdAt": "2025-04-24T00:00:00Z",
+      "updatedAt": "2025-04-24T00:00:00Z"
     }
   ]
   
