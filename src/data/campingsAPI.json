@@ -1,47 +1,224 @@
 [
-    {
+  {
+    "id": 1,
+    "name": "Camping Paradise",
+    "description": "Un camping con todas las comodidades",
+    "locationId": 1,
+    "nearNature": [
+      "playa",
+      "bosque"
+    ],
+    "limitCampingId": 1,
+    "userId": "1569d405-b3ed-4fee-8784-3eaaa583dec2",
+    "createdAt": "2025-04-10T20:02:13.498Z",
+    "updatedAt": "2025-04-10T20:02:13.498Z",
+    "location": {
       "id": 1,
-      "name": "Camping Paradise",
-      "description": "Un camping con todas las comodidades",
-      "locationId": 1,
-      "nearNature": [
-        "playa",
-        "bosque"
-      ],
-      "limitCampingId": 1,
-      "userId": "1569d405-b3ed-4fee-8784-3eaaa583dec2",
-      "createdAt": "2025-04-10T20:02:13.498Z",
-      "updatedAt": "2025-04-10T20:02:13.498Z",
-      "location": {
+      "city": "Costa Azul",
+      "region": "Costa del Sol",
+      "country": "España",
+      "coordinates": "{\"lat\":40.2458,\"lng\":-3.9238}"
+    },
+    "pricing": [
+      {
         "id": 1,
-        "city": "Costa Azul",
-        "region": "Costa del Sol",
-        "country": "España",
-        "coordinates": "{\"lat\":40.2458,\"lng\":-3.9238}"
+        "pricePerNight": 50,
+        "season": "Verano",
+        "campingId": 1
+      }
+    ],
+    "amenities": [
+      {
+        "id": 1,
+        "name": "Wifi gratis",
+        "icon": "FaWifi",
+        "available": true
       },
-      "pricing": [
-        {
-          "id": 1,
-          "pricePerNight": 50,
-          "season": "Verano",
-          "campingId": 1
-        }
-      ],
-      "amenities": [
-        {
-          "id": 1,
-          "name": "Piscina",
-          "available": true
-        }
-      ],
-      "nearbyAttractions": [
-        {
-          "id": 1,
-          "name": "Playa Dorada",
-          "type": "playa",
-          "distance": 0.5,
-          "campingId": 1
-        }
-      ]
-    }
-  ]
+      {
+        "id": 2,
+        "name": "Duchas",
+        "icon": "FaShower",
+        "available": true
+      },
+      {
+        "id": 3,
+        "name": "Parking",
+        "icon": "FaParking",
+        "available": true
+      },
+      {
+        "id": 4,
+        "name": "Parrillas",
+        "icon": "FaUtensils",
+        "available": true
+      },
+      {
+        "id": 5,
+        "name": "Piscina",
+        "icon": "FaSwimmingPool",
+        "available": true
+      }
+    ],
+    "nearbyAttractions": [
+      {
+        "id": 1,
+        "name": "Playa Dorada",
+        "type": "playa",
+        "distance": 0.5,
+        "campingId": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mountain Escape",
+    "description": "Un refugio en las montañas para los amantes de la naturaleza",
+    "locationId": 2,
+    "nearNature": [
+      "montaña",
+      "río"
+    ],
+    "limitCampingId": 2,
+    "userId": "a2b3c4d5-e6f7-8901-2345-6789abcdef01",
+    "createdAt": "2025-04-12T15:30:00.000Z",
+    "updatedAt": "2025-04-12T15:30:00.000Z",
+    "location": {
+      "id": 2,
+      "city": "Valle Verde",
+      "region": "Pirineos",
+      "country": "España",
+      "coordinates": "{\"lat\":42.1234,\"lng\":1.5678}"
+    },
+    "pricing": [
+      {
+        "id": 2,
+        "pricePerNight": 70,
+        "season": "Invierno",
+        "campingId": 2
+      }
+    ],
+    "amenities": [
+      {
+        "id": 1,
+        "name": "Wifi gratis",
+        "icon": "FaWifi",
+        "available": true
+      },
+      {
+        "id": 2,
+        "name": "Duchas",
+        "icon": "FaShower",
+        "available": true
+      },
+      {
+        "id": 3,
+        "name": "Parking",
+        "icon": "FaParking",
+        "available": true
+      },
+      {
+        "id": 4,
+        "name": "Parrillas",
+        "icon": "FaUtensils",
+        "available": true
+      },
+      {
+        "id": 5,
+        "name": "Chimenea",
+        "icon": "FaFire",
+        "available": true
+      },
+      {
+        "id": 6,
+        "name": "Senderos marcados",
+        "icon": "FaHiking",
+        "available": true
+      }
+    ],
+    "nearbyAttractions": [
+      {
+        "id": 2,
+        "name": "Cascada Azul",
+        "type": "río",
+        "distance": 1.2,
+        "campingId": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lakeside Retreat",
+    "description": "Un lugar tranquilo junto al lago para relajarse y disfrutar",
+    "locationId": 3,
+    "nearNature": [
+      "lago",
+      "bosque"
+    ],
+    "limitCampingId": 3,
+    "userId": "b3c4d5e6-f7g8-9012-3456-789abcdef012",
+    "createdAt": "2025-04-14T10:00:00.000Z",
+    "updatedAt": "2025-04-14T10:00:00.000Z",
+    "location": {
+      "id": 3,
+      "city": "Lago Azul",
+      "region": "Patagonia",
+      "country": "Argentina",
+      "coordinates": "{\"lat\":-40.1234,\"lng\":-71.5678}"
+    },
+    "pricing": [
+      {
+        "id": 3,
+        "pricePerNight": 60,
+        "season": "Primavera",
+        "campingId": 3
+      }
+    ],
+    "amenities": [
+      {
+        "id": 1,
+        "name": "Wifi gratis",
+        "icon": "FaWifi",
+        "available": true
+      },
+      {
+        "id": 2,
+        "name": "Duchas",
+        "icon": "FaShower",
+        "available": true
+      },
+      {
+        "id": 3,
+        "name": "Parking",
+        "icon": "FaParking",
+        "available": true
+      },
+      {
+        "id": 4,
+        "name": "Parrillas",
+        "icon": "FaUtensils",
+        "available": true
+      },
+      {
+        "id": 5,
+        "name": "Kayaks",
+        "icon": "FaWater",
+        "available": true
+      },
+      {
+        "id": 6,
+        "name": "Zona de pesca",
+        "icon": "FaFish",
+        "available": true
+      }
+    ],
+    "nearbyAttractions": [
+      {
+        "id": 3,
+        "name": "Mirador del Lago",
+        "type": "lago",
+        "distance": 0.8,
+        "campingId": 3
+      }
+    ]
+  }
+]

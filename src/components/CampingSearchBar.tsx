@@ -6,8 +6,8 @@ import {
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { BiFilter } from 'react-icons/bi';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import bannerimg from "@/data/imgcamping.json"
 interface Props {
     onSearch: (query: string) => void;
     onFilterChange: (filter: string) => void;
@@ -16,9 +16,17 @@ interface Props {
 const CampingSearchBar: React.FC<Props> = ({ onSearch, onFilterChange }) => {
     const [searchText, setSearchText] = useState('');
     const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
-    const bannerHeight = useBreakpointValue({ base: '150px', md: '200px' });
+    const bannerHeight = useBreakpointValue({ base: '150px', md: '450px' });
     const fontSizeTitle = useBreakpointValue({ base: 'lg', md: 'xl' });
     const fontSizeSubtitle = useBreakpointValue({ base: 'sm', md: 'md' });
+    const [currentBanner, setCurrentBanner] = useState(0);
+    
+    useEffect(() =>{
+        const interval = setInterval(() => {
+           setCurrentBanner((prev) => (prev + 1) % bannerimg.length); 
+        }, 5000);
+        return () => clearInterval(interval);
+    },[]);
 
     const handleSearch = () => {
         onSearch(searchText);
@@ -82,11 +90,18 @@ const CampingSearchBar: React.FC<Props> = ({ onSearch, onFilterChange }) => {
                 Encuentra tu próxima aventura
             </Text>
             <Box position="relative" h={bannerHeight} bg="gray.200" borderRadius="md" overflow="hidden">
-                <Image src="https://via.placeholder.com/800x200" alt="Camping Banner" objectFit="cover" w="100%" h="100%" />
-                <Box position="absolute" top="50%" left="5%" transform="translateY(-50%)" color="white" bg="blackAlpha.600" p={2} borderRadius="md">
-                    <Text fontSize={fontSizeSubtitle} fontWeight="bold">15% de descuento en tu primer reserva</Text>
-                </Box>
-            </Box>
+    <Image
+        src={bannerimg[currentBanner].url}
+        alt={bannerimg[currentBanner].alt}
+        objectFit="cover"
+        w="100%"
+        h="100%"
+    />
+    <Box position="absolute" top="50%" left="5%" transform="translateY(-50%)" color="white" bg="blackAlpha.600" p={2} borderRadius="md">
+        <Text fontSize={fontSizeSubtitle} fontWeight="bold">15% de descuento en tu primer reserva</Text>
+    </Box>
+</Box>
+
         </Box>
     );
 };

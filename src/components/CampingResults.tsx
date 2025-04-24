@@ -1,6 +1,7 @@
 import { Box, Text, Flex, VStack, Image, Spinner } from '@chakra-ui/react';
-import { useCampingStore } from '@/store/campingStore';
-import { CampingType } from '@/store/campingStore';
+import { useCampingStore } from '@/store/CampingStore';
+
+import { CampingType } from '@/types/camping';
 import { useEffect } from 'react';
 
 const CampingResults: React.FC = () => {
@@ -31,7 +32,7 @@ const CampingResults: React.FC = () => {
 
           return (
             <Flex key={camping.id} p={3} borderWidth="1px" borderRadius="md" align="center" gap={3}>
-              <Image src="https://via.placeholder.com/100" alt={camping.name} boxSize="100px" objectFit="cover" borderRadius="md" />
+              <Image src={camping.media?.[0]?.url || "https://via.placeholder.com/100"} alt={camping.name} boxSize="100px" objectFit="cover" borderRadius="md" />
               <Box flex="1">
                 <Text fontWeight="bold">{camping.name}</Text>
                 <Text fontSize="sm" color="gray.500">{camping.location.city}, {camping.location.country}</Text>
