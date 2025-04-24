@@ -36,8 +36,8 @@ export const Navbar = () => {
                         {!user.id ? (
                             <>
                                 <MenuItem as={Link} to="/">Inicio</MenuItem>
-                                <MenuItem as={Link} to="/registro">Registrarse</MenuItem>
-                                <MenuItem as={Link} to="/login">Iniciar sesión</MenuItem>
+                                <MenuItem as={Link} to="/sobre-nosotros">Sobre nosotros</MenuItem>
+                                <MenuItem as={Link} to="/contacto">Contacto</MenuItem>
                             </>
                         ) : (
                             <>
@@ -45,7 +45,7 @@ export const Navbar = () => {
                                 {isOwner && (
                                     <MenuItem as={Link} to="/registro-camping">Registro de Camping</MenuItem>
                                 )}
-                                <MenuItem _hover={{bg:"red"}} onClick={handleLogout}>Cerrar sesión</MenuItem>
+                                <MenuItem _hover={{bg:"red", color:"white"}} onClick={handleLogout}>Cerrar sesión</MenuItem>
                             </>
                         )}
                     </MenuList>

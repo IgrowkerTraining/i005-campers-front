@@ -1,197 +1,159 @@
-{
-    "campings": [
-      {
-        "nombre": "Camping La Cascada",
-        "ubicacion": "San Carlos de Bariloche, Río Negro",
-        "mapa": "https://maps.google.com/?q=Camping+La+Cascada",
-        "contacto": "+54 294 446 7890",
-        "descripcion": "Camping rodeado de impresionantes cascadas y bosques patagónicos.",
-        "galeria": [
-          "https://www.lacascadacamping.com/imagen1.jpg",
-          "https://www.lacascadacamping.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["río", "montaña", "bosque"],
-        "servicios": ["duchas", "wifi", "baños", "proveeduría", "parrillas"],
-        "tarifas": {
-          "carpa": "25 USD por noche",
-          "vehiculo": "35 USD por noche",
-          "pase_diario": "15 USD por persona"
-        }
+[
+    {
+      "id": 1,
+      "name": "Camping Lago Azul",
+      "description": "Un hermoso camping junto al lago, ideal para descansar.",
+      "contactPhone": "+54 9 123 456789",
+      "location": {
+        "campingAddress": "Av. del Lago 100, San Carlos de Bariloche",
+        "mapLink": "https://goo.gl/maps/example"
       },
-      {
-        "nombre": "Camping Laguna Verde",
-        "ubicacion": "El Calafate, Santa Cruz",
-        "mapa": "https://maps.google.com/?q=Camping+Laguna+Verde",
-        "contacto": "+54 2902 480 112",
-        "descripcion": "Un camping tranquilo con vistas a la laguna y acceso a glaciares cercanos.",
-        "galeria": [
-          "https://www.lagunaverdecamping.com/imagen1.jpg",
-          "https://www.lagunaverdecamping.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["laguna", "glaciares"],
-        "servicios": [
-          "pileta",
-          "alquiler de carpas",
-          "excursiones",
-          "cancha de futbol",
-          "estacionamiento"
-        ],
-        "tarifas": {
-          "carpa": "30 USD por noche",
-          "vehiculo": "40 USD por noche",
-          "pase_diario": "20 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 500 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 700 }
+      ],
+      "amenities": ["Duchas", "Wi-Fi", "Pileta"]
+    },
+    {
+      "id": 2,
+      "name": "Camping El Bosque",
+      "description": "Un lugar tranquilo rodeado de naturaleza.",
+      "contactPhone": "+54 9 266 4123456",
+      "location": {
+        "campingAddress": "Ruta 5 km 120, San Luis",
+        "mapLink": "https://maps.app.goo.gl/KfCFsGSxCoDMJvmp6"
       },
-      {
-        "nombre": "Camping Sol de Los Andes",
-        "ubicacion": "Mendoza, Mendoza",
-        "mapa": "https://maps.google.com/?q=Camping+Sol+de+Los+Andes",
-        "contacto": "+54 261 334 5566",
-        "descripcion": "Disfruta de vistas espectaculares y actividades en los Andes.",
-        "galeria": [
-          "https://www.soldelosandescamping.com/imagen1.jpg",
-          "https://www.soldelosandescamping.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["cerro", "montaña"],
-        "servicios": ["duchas", "yoga", "excursiones", "parrillas", "proveeduría"],
-        "tarifas": {
-          "carpa": "22 USD por noche",
-          "vehiculo": "32 USD por noche",
-          "pase_diario": "12 USD por persona"
+      "media": [
+        {
+          "url": "https://static.vecteezy.com/system/resources/thumbnails/051/021/034/small/tourist-tent-at-campsite-on-shore-of-clear-mountain-lake-and-bonfire-beautiful-night-landscape-photo.jpg",
+          "type": "image"
         }
+      ],
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 450 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 600 }
+      ],
+      "amenities": ["Wi-Fi", "Excursiones"]
+    },
+    {
+      "id": 5,
+      "name": "Camping La Playa",
+      "description": "Junto al mar, con una vista espectacular.",
+      "contactPhone": "+54 9 223 1122334",
+      "location": {
+        "campingAddress": "Calle Playa 456, Mar del Plata",
+        "mapLink": "https://goo.gl/maps/anotherexample"
       },
-      {
-        "nombre": "Camping Río de Luna",
-        "ubicacion": "Villa La Angostura, Neuquén",
-        "mapa": "https://maps.google.com/?q=Camping+Rio+de+Luna",
-        "contacto": "+54 294 444 7654",
-        "descripcion": "Un lugar ideal para descansar junto al río y disfrutar de la tranquilidad.",
-        "galeria": [
-          "https://www.riodelunacamping.com/imagen1.jpg",
-          "https://www.riodelunacamping.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["río", "bosque"],
-        "servicios": ["baños", "wifi", "proveeduría", "excursiones", "pileta"],
-        "tarifas": {
-          "carpa": "20 USD por noche",
-          "vehiculo": "28 USD por noche",
-          "pase_diario": "10 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 600 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 850 }
+      ],
+      "amenities": ["Parrillas", "Pileta"]
+    },
+    {
+      "id": 6,
+      "name": "Camping Montañas",
+      "description": "Para los amantes de las montañas y el senderismo.",
+      "contactPhone": "+54 9 263 9876543",
+      "location": {
+        "campingAddress": "Calle Alta Montaña, Mendoza",
+        "mapLink": "https://maps.app.goo.gl/anotherlink"
       },
-      {
-        "nombre": "Camping Cerro Dorado",
-        "ubicacion": "San Juan, San Juan",
-        "mapa": "https://maps.google.com/?q=Camping+Cerro+Dorado",
-        "contacto": "+54 264 341 9876",
-        "descripcion": "Camping en el corazón de la montaña, ideal para trekking y escalada.",
-        "galeria": [
-          "https://www.campingcerrodorado.com/imagen1.jpg",
-          "https://www.campingcerrodorado.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["montaña", "cerro"],
-        "servicios": [
-          "excursiones",
-          "parrillas",
-          "proveeduría",
-          "cancha de futbol",
-          "wifi"
-        ],
-        "tarifas": {
-          "carpa": "27 USD por noche",
-          "vehiculo": "37 USD por noche",
-          "pase_diario": "17 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 550 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 750 }
+      ],
+      "amenities": ["Excursiones", "Wi-Fi"]
+    },
+    {
+      "id": 7,
+      "name": "Camping Los Valles",
+      "description": "Un camping en el corazón de los valles calchaquíes.",
+      "contactPhone": "+54 9 388 3344556",
+      "location": {
+        "campingAddress": "Ruta Nacional 40, Salta",
+        "mapLink": "https://maps.app.goo.gl/examplelink"
       },
-      {
-        "nombre": "Camping El Refugio",
-        "ubicacion": "Villa Pehuenia, Neuquén",
-        "mapa": "https://maps.google.com/?q=Camping+El+Refugio",
-        "contacto": "+54 299 567 4321",
-        "descripcion": "Camping junto al lago con actividades acuáticas y vistas increíbles.",
-        "galeria": [
-          "https://www.campingelrefugio.com/imagen1.jpg",
-          "https://www.campingelrefugio.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["lago", "bosque"],
-        "servicios": ["duchas", "alquiler de carpas", "pileta", "baños", "excursiones"],
-        "tarifas": {
-          "carpa": "25 USD por noche",
-          "vehiculo": "35 USD por noche",
-          "pase_diario": "15 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 470 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 650 }
+      ],
+      "amenities": ["Duchas", "Estacionamiento"]
+    },
+    {
+      "id": 8,
+      "name": "Camping El Río",
+      "description": "Junto al río, perfecto para actividades acuáticas.",
+      "contactPhone": "+54 9 351 2334455",
+      "location": {
+        "campingAddress": "Calle Río 120, Córdoba",
+        "mapLink": "https://maps.app.goo.gl/riverlink"
       },
-      {
-        "nombre": "Camping Las Nubes",
-        "ubicacion": "Tafí del Valle, Tucumán",
-        "mapa": "https://maps.google.com/?q=Camping+Las+Nubes",
-        "contacto": "+54 3867 567 2103",
-        "descripcion": "Camping elevado con vistas panorámicas y conexión con la naturaleza.",
-        "galeria": [
-          "https://www.campinglasnubes.com/imagen1.jpg",
-          "https://www.campinglasnubes.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["cerro", "montaña"],
-        "servicios": ["yoga", "wifi", "proveeduría", "pileta", "parrillas"],
-        "tarifas": {
-          "carpa": "23 USD por noche",
-          "vehiculo": "33 USD por noche",
-          "pase_diario": "13 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 400 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 600 }
+      ],
+      "amenities": ["Wi-Fi", "Parrillas", "Pileta"]
+    },
+    {
+      "id": 9,
+      "name": "Camping La Luna",
+      "description": "Ubicado en una zona tranquila, ideal para desconectar.",
+      "contactPhone": "+54 9 227 3344556",
+      "location": {
+        "campingAddress": "Ruta 11, Santa Fe",
+        "mapLink": "https://maps.app.goo.gl/lunalink"
       },
-      {
-        "nombre": "Camping El Río Claro",
-        "ubicacion": "Carlos Paz, Córdoba",
-        "mapa": "https://maps.google.com/?q=Camping+El+Río+Claro",
-        "contacto": "+54 351 123 8765",
-        "descripcion": "Camping ideal para disfrutar del río y deportes acuáticos.",
-        "galeria": [
-          "https://www.campingelrioclaro.com/imagen1.jpg",
-          "https://www.campingelrioclaro.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["río", "bosque"],
-        "servicios": ["duchas", "cancha de futbol", "alquiler de carpas", "excursiones", "baños"],
-        "tarifas": {
-          "carpa": "21 USD por noche",
-          "vehiculo": "31 USD por noche",
-          "pase_diario": "11 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 520 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 710 }
+      ],
+      "amenities": ["Yoga", "Wi-Fi"]
+    },
+    {
+      "id": 10,
+      "name": "Camping Sierra Verde",
+      "description": "Ubicado en las sierras, ideal para caminatas.",
+      "contactPhone": "+54 9 351 2233445",
+      "location": {
+        "campingAddress": "Calle Sierra 300, Córdoba",
+        "mapLink": "https://maps.app.goo.gl/sierralink"
       },
-      {
-        "nombre": "Camping Sol y Agua",
-        "ubicacion": "San Rafael, Mendoza",
-        "mapa": "https://maps.google.com/?q=Camping+Sol+y+Agua",
-        "contacto": "+54 2627 432 198",
-        "descripcion": "Camping cerca de la laguna con actividades recreativas y vistas magníficas.",
-        "galeria": [
-          "https://www.campingsolyagua.com/imagen1.jpg",
-          "https://www.campingsolyagua.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["laguna", "montaña"],
-        "servicios": ["duchas", "wifi", "proveeduría", "excursiones", "pileta"],
-        "tarifas": {
-          "carpa": "28 USD por noche",
-          "vehiculo": "38 USD por noche",
-          "pase_diario": "18 USD por persona"
-        }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 480 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 650 }
+      ],
+      "amenities": ["Cancha de fútbol", "Estacionamiento"]
+    },
+    {
+      "id": 11,
+      "name": "Camping Paraíso",
+      "description": "En un entorno natural único, para disfrutar de la tranquilidad.",
+      "contactPhone": "+54 9 299 2233445",
+      "location": {
+        "campingAddress": "Ruta 3, Neuquén",
+        "mapLink": "https://maps.app.goo.gl/paraisolink"
       },
-      {
-        "nombre": "Camping Lago Azul",
-        "ubicacion": "El Chaltén, Santa Cruz",
-        "mapa": "https://maps.google.com/?q=Camping+Lago+Azul",
-        "contacto": "+54 2962 456 789",
-        "descripcion": "Camping junto al lago con paisajes de montaña y acceso a senderos de trekking.",
-        "galeria": [
-          "https://www.campinglagoazul.com/imagen1.jpg",
-          "https://www.campinglagoazul.com/imagen2.jpg"
-        ],
-        "enclaves_cercanos": ["lago", "montaña"],
-        "servicios": ["excursiones", "baños", "duchas", "wifi", "parrillas"],
-        "tarifas": {
-          "carpa": "26 USD por noche",
-          "vehiculo": "36 USD por noche",
-          "pase_diario": "16 USD por persona"
-        }
-      }
-    ]
-  }
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 530 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 710 }
+      ],
+      "amenities": ["Duchas", "Excursiones"]
+    },
+    {
+      "id": 12,
+      "name": "Camping El Sol",
+      "description": "Ideal para disfrutar de días soleados y actividades al aire libre.",
+      "contactPhone": "+54 9 351 6677889",
+      "location": {
+        "campingAddress": "Calle Sol 45, Buenos Aires",
+        "mapLink": "https://maps.app.goo.gl/sollink"
+      },
+      "pricing": [
+        { "tarifa": "Noche en carpa", "pricePerNight": 460 },
+        { "tarifa": "Noche en vehículo", "pricePerNight": 630 }
+      ],
+      "amenities": ["Pileta", "Wi-Fi"]
+    }
+  ]
   
