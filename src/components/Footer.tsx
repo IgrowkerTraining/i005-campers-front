@@ -30,19 +30,19 @@ export const Footer = () => {
         {/* Links en Vertical */}
         <VStack align="flex-start" spacing={4}>
           <Link
-            href="#"
+            href="/preguntas-frecuentes"
             _hover={{ color: "whiteAlpha.800", textDecoration: "underline" }}
           >
             Preguntas frecuentes
           </Link>
           <Link
-            href="/About"
+            href="/sobre-nosotros"
             _hover={{ color: "whiteAlpha.800", textDecoration: "underline" }}
           >
             Sobre Nosotros
           </Link>
           <Link
-            href="#"
+            href="/contacto"
             _hover={{ color: "whiteAlpha.800", textDecoration: "underline" }}
           >
             Contacto

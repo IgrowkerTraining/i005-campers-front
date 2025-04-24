@@ -1,6 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
+import Questions from '@/pages/Questions';
+import Contact from '@/pages/Contact';
 import Camping from '@/pages/Camping';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
@@ -12,8 +14,16 @@ export const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: '/about',
+    path: '/sobre-nosotros',
     element: <About />,
+  },
+  {
+    path: '/preguntas-frecuentes',
+    element: <Questions />,
+  },
+  {
+    path: '/contacto',
+    element: <Contact />,
   },
   {
     path: '/camping/:id',
@@ -32,7 +42,7 @@ export const router = createBrowserRouter([
     element: <SearchView/>,
   },
   {
-    path: '/campingform',
+    path: '/registro-camping',
     element: <CampingForm/>,
   },
 ]);
