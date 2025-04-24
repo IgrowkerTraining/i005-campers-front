@@ -18,7 +18,10 @@ export const Navbar = () => {
     return (
         <Box bg={'white'} p={6}>
             <Flex justifyContent={'space-between'}>
-                <Image src={logo} alt="campers logo" w="200px" />
+            <Link to="/">
+    <Image src={logo} alt="campers logo" w="200px" />
+</Link>
+
                 <Menu>
                     <MenuButton
                         as={IconButton}
@@ -33,16 +36,16 @@ export const Navbar = () => {
                         {!user.id ? (
                             <>
                                 <MenuItem as={Link} to="/">Inicio</MenuItem>
-                                <MenuItem as={Link} to="/registro">Registrarse</MenuItem>
-                                <MenuItem as={Link} to="/login">Iniciar sesión</MenuItem>
+                                <MenuItem as={Link} to="/sobre-nosotros">Sobre nosotros</MenuItem>
+                                <MenuItem as={Link} to="/contacto">Contacto</MenuItem>
                             </>
                         ) : (
                             <>
                                 <MenuItem as={Link} to="/search">Buscar Campings</MenuItem>
                                 {isOwner && (
-                                    <MenuItem as={Link} to="/register-camping">Registro de Camping</MenuItem>
+                                    <MenuItem as={Link} to="/registro-camping">Registro de Camping</MenuItem>
                                 )}
-                                <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
+                                <MenuItem _hover={{bg:"red", color:"white"}} onClick={handleLogout}>Cerrar sesión</MenuItem>
                             </>
                         )}
                     </MenuList>

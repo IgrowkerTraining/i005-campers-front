@@ -47,7 +47,7 @@ function Camping() {
       }
     };
 
-    if (!campings.length) {
+    if (!campings || campings.length === 0) {
       loadCampings();
     }
   }, [fetchCampings, campings]);
@@ -59,7 +59,7 @@ function Camping() {
     if (campings?.length > 0 && id) {
       const camping = campings.find(camp => {
         console.log('Comparing:', { campId: camp.id, searchId: Number(id) });
-        return camp.id === Number(id);
+        return Number(camp.id) === Number(id);
       });
       console.log('🎯 Found camping:', camping);
       setCurrentCamping(camping || null);
@@ -94,7 +94,7 @@ function Camping() {
   if (!currentCamping) {
     return (
       <Box textAlign="center" py={10}>
-        <Text>No se encontró el camping</Text>
+        <Text>No se encontró el camping con ID: {id}</Text>
       </Box>
     );
   }

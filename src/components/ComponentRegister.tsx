@@ -57,7 +57,7 @@ const RegisterComponent: React.FC = () => {
             console.log('Usuario registrado:', response);
             
             // Redirigir al login después del registro exitoso
-            navigate('/login');
+            navigate('/exito');
         } catch (error: any) {
             setError(error.message || 'Error al registrar usuario');
         } finally {

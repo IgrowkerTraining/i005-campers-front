@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import CustomButton from "./CustomButton";
+import { Link } from 'react-router-dom';
 
 interface PromoteCampingProps {
   // Agrega aquí cualquier prop que necesites
@@ -46,8 +47,9 @@ CustomButton
           <ListItem>Confirmá y gestioná todo desde la app</ListItem>
         </UnorderedList>
       </VStack>
-
+      <Link to="/registro-camping">
       <CustomButton variant="dark">Registrarse</CustomButton>            
+    </Link>
     </Box>
   );
 };

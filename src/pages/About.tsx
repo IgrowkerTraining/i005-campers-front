@@ -1,62 +1,25 @@
-import { useEffect } from 'react';
-import { Box, Heading, Spinner, Text, VStack, Image } from '@chakra-ui/react';
-import MainLayout from '@/layouts/MainLayout';
-import { useCampingStore } from '@/store/CampingStore';
-import campingImage from '@/assets/camping/camping1.jpg';
-import { CampingType } from "../types/camping";
-
-function About() {
-  const { campings, isLoading, error, fetchCampings  } = useCampingStore();
-
-  useEffect(() => {
-    fetchCampings();
-  }, [fetchCampings]);
-
-  if (isLoading) {
-    return (
-      <Box textAlign="center" py={10}>
-        <Spinner size="xl" />
-        <Text mt={4}>Cargando campings...</Text>
-      </Box>
-    );
-  }
-  if (error) {
-    return (
-      <Box textAlign="center" py={10}>
-        <Text color="red.500">Error: {error}</Text>
-      </Box>
-    );
-  }
-  //console.log(campings);
+import { Box, Heading, Text } from "@chakra-ui/react";
+import MainLayout from "@/layouts/MainLayout";
+const About = () => {
   return (
     <MainLayout>
-      <Box p={4}>
-        <Heading>Prueba de About</Heading>
-        <VStack spacing={8} align="stretch" maxWidth="container.lg" mx="auto" py={8}>
-        {campings.map((camping: CampingType) => (
-          <Box
-            key={camping.id}
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            boxShadow="md"
-          >
-            <Image src={campingImage} alt={camping.name} objectFit="cover" boxSize="100%" />
-            <Box p={4}>
-              <Heading as="h3" size="md" mb={2}>
-                {camping.name}
-              </Heading>
-              <Text fontSize="sm" color="gray.600">
-                {camping.location.city}
-              </Text>
-              <Text mt={2}>{camping.description}</Text>
-            </Box>
-          </Box>
-        ))}
-      </VStack>
-      </Box>
+    <Box p={8} maxW="700px" mx="auto">
+      <Heading as="h2" size="xl" color="primary.main" mb={4}>Sobre Nosotros</Heading>
+      <Text mb={4}>
+        Campers es una iniciativa de <strong>Igrowker</strong> que conecta a turistas con campings en Argentina de forma simple y segura.
+      </Text>
+      <Text mb={4}>
+        Sabemos que encontrar un camping confiable puede ser un desafío. Por eso creamos una plataforma intuitiva que permite buscar, comparar y reservar fácilmente.
+      </Text>
+      <Text mb={4}>
+        También ayudamos a los dueños de campings a digitalizar su negocio, dando visibilidad y atrayendo reservas todo el año.
+      </Text>
+      <Text fontWeight="bold">
+        Nuestro objetivo: transformar la forma en que se reserva un camping en Argentina.
+      </Text>
+    </Box>
     </MainLayout>
   );
-}
+};
 
 export default About;

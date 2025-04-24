@@ -8,8 +8,13 @@ import {
   VStack,  
   Alert,
   AlertIcon,
+  Text,
+  Divider,
+  Center,
 } from '@chakra-ui/react';
-
+import { useNavigate } from "react-router-dom";
+import icon from '@/assets/Icongreen.png';
+import iconNa from '@/assets/namegreen.png';
 interface LoginComponentProps {
   onLogin: (email: string, password: string) => Promise<void>;
   isLoading: boolean;
@@ -19,6 +24,7 @@ interface LoginComponentProps {
 const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, error }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,10 +32,19 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, err
   };
 
   return (
-    <Box maxW="md" mx="auto" mt={8}>
+    <Box maxW="400px" mx="auto" mt={8} p="6" borderWidth="1px" borderRadius="lg" boxShadow="lg">
+       <Center mb="8">
+        <Box textAlign="center">
+          <img src={icon} alt="Campers Icon" style={{ width: "150px" }} />
+          <img src={iconNa} alt="Campers Name" style={{ width: "150px" }} />
+        </Box>
+      </Center>
+      <Text textAlign="center" fontSize="2xl" fontWeight="bold" mb="6">
+        Iniciar sesión
+      </Text>
       <form onSubmit={handleSubmit}>
         <VStack spacing={4}>
-          <FormControl isRequired>
+          <FormControl isRequired id="email">
             <FormLabel>Email</FormLabel>
             <Input
               type="email"
@@ -38,8 +53,8 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, err
               placeholder="Ingresa tu email"
             />
           </FormControl>
-          <FormControl isRequired>
-            <FormLabel>Password</FormLabel>
+          <FormControl isRequired id="password">
+            <FormLabel>Contraseña</FormLabel>
             <Input
               type="password"
               value={password}
@@ -55,7 +70,9 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, err
           )}
           <Button
             type="submit"
-            colorScheme="blue"
+            color="white"
+            bg="primary.main"
+            _hover={{bg: "secondary.accent"}}
             width="full"
             isLoading={isLoading}
             loadingText="Iniciando sesión..."
@@ -63,6 +80,14 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, err
             Iniciar sesión
           </Button>
         </VStack>
+        <Divider my="6" borderWidth="1px" borderColor="gray.400" />
+
+        <Text textAlign="center" fontSize="sm" mt="6" color="gray.600">
+          ¿No tienes una cuenta?{" "}
+          <Button variant="link" color="blue.500" onClick={() => navigate("/registro")}>
+            Regístrate aquí
+          </Button>
+        </Text>
       </form>
     </Box>
   );

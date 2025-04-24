@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -17,9 +17,9 @@ import name from "@/assets/namegreen.png";
 import { useNavigate } from 'react-router-dom';
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { useDisclosure } from '@chakra-ui/react';
-import { BookingModal } from '/workspaces/i005-campers-front/src/components/BookingModal/BookingModal.tsx';
-import { BookingSuccess } from '/workspaces/i005-campers-front/src/components/BookingSuccess/BookingSuccess.tsx';
-
+import { BookingModal } from '@/components/BookingModal/BookingModal';
+import { BookingSuccess } from '@/components/BookingSuccess/BookingSuccess.tsx';
+import { Footer } from './Footer';
 const CampingForm: React.FC = () => {
   const navigate = useNavigate();
   const toast = useToast();
@@ -174,7 +174,9 @@ const CampingForm: React.FC = () => {
     setSubmittedCamping(null);
     navigate('/');
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {bookingDetails ? (
@@ -444,6 +446,7 @@ const CampingForm: React.FC = () => {
           onConfirm={handleConfirmBooking}
         />
       )}
+      <Footer />
     </>
   );
 };
