@@ -11,18 +11,6 @@ import { BookingSuccess } from '@/components/BookingSuccess/BookingSuccess.tsx';
 import MainLayout from '@/layouts/MainLayout';
 
 const CampingForm: React.FC = () => {
-    const navigate = useNavigate();
-    const toast = useToast();
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    const [bookingDetails, setBookingDetails] = useState<{
-        campingName: string;
-        startDate: string;
-        endDate: string;
-    } | null>(null);
-    const [submittedCamping, setSubmittedCamping] = useState<{
-        name: string;
-        pricePerNight: string;
-    } | null>(null);
   const navigate = useNavigate();
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
