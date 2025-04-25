@@ -9,8 +9,8 @@ import Register from '@/pages/Register';
 import SearchView from '@/pages/SearchView';
 import CampingForm from '@/components/CampingForm';
 import Successlogin from '@/pages/Successlogin';
-import { BookingGuest } from '/workspaces/i005-campers-front/src/components/BookingGuest/BookingGuest.tsx';
-import BookingGuestPage from '/workspaces/i005-campers-front/src/pages/BookingGuestPage.tsx';
+import { BookingGuest } from '@/components/BookingGuest/BookingGuest.tsx';
+import BookingGuestPage from '@/pages/BookingGuestPage.tsx';
 
 export const router = createBrowserRouter([
   {
