@@ -67,6 +67,7 @@ export const BookingGuest: React.FC<BookingGuestProps> = ({
       return;
     }
 
+
     // Validar número de personas
     if (numberOfGuests < 1) {
       toast({
@@ -79,6 +80,7 @@ export const BookingGuest: React.FC<BookingGuestProps> = ({
       return;
     }
 
+
     // Calcular el precio total
     const totalPrice = calculateTotalPrice();
 
@@ -86,6 +88,7 @@ export const BookingGuest: React.FC<BookingGuestProps> = ({
     toast({
       title: 'Reserva Exitosa',
       description: 'Tu reserva ha sido confirmada. Serás redirigido a la página de búsqueda.',
+
       status: 'success',
       duration: 3000,
       isClosable: true,

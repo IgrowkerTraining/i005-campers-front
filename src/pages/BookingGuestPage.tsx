@@ -45,6 +45,7 @@ const BookingGuestPage: React.FC = () => {
     );
   }
 
+
   return (
     <MainLayout>
       <BookingGuest
