@@ -1,24 +1,30 @@
+import { useState } from 'react';
+import { useCampingStore } from "@/store/CampingStore";
 import CampingResults from "@/components/CampingResults";
-import CampingSearchBar from "@/components/CampingSearchBar"
-import MainLayout from "@/layouts/MainLayout"
-
-
+import CampingSearchBar from "@/components/CampingSearchBar";
+import MainLayout from "@/layouts/MainLayout";
 
 const SearchView: React.FC = () => {
-    const handleSearch = (query: string) => {
-      console.log('Buscando:', query);
-    };
-  
-    const handleFilterChange = (filter: string) => {
-      console.log('Filtro seleccionado:', filter);
-    };
-  
-    return (
-      <MainLayout>
-        <CampingSearchBar onSearch={handleSearch} onFilterChange={handleFilterChange} />
-        <CampingResults />
-      </MainLayout>
-    );
+  const { searchCampings } = useCampingStore();
+  const [searchText, setSearchText] = useState('');
+  const [filter, setFilter] = useState('');
+
+  const handleSearch = (query: string) => {
+    setSearchText(query);
+    searchCampings({ search: query, filter });
   };
-  
-  export default SearchView;
+
+  const handleFilterChange = (selectedFilter: string) => {
+    setFilter(selectedFilter);
+    searchCampings({ search: searchText, filter: selectedFilter });
+  };
+
+  return (
+    <MainLayout>
+      <CampingSearchBar onSearch={handleSearch} onFilterChange={handleFilterChange} />
+      <CampingResults />
+    </MainLayout>
+  );
+};
+
+export default SearchView;
