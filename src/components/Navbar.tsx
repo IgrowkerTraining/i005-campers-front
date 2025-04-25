@@ -15,12 +15,15 @@ export const Navbar = () => {
         navigate('/');
     };
 
+    // Determinar la ruta del logo según el estado de autenticación
+    const logoRedirectPath = user.id ? '/search' : '/';
+
     return (
         <Box bg={'white'} p={6}>
             <Flex justifyContent={'space-between'}>
-            <Link to="/">
-    <Image src={logo} alt="campers logo" w="200px" />
-</Link>
+                <Link to={logoRedirectPath}>
+                    <Image src={logo} alt="campers logo" w="200px" />
+                </Link>
 
                 <Menu>
                     <MenuButton

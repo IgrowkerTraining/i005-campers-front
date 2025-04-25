@@ -42,6 +42,7 @@ export const BookingGuest: React.FC<BookingGuestProps> = ({
   };
 
   const handleReserve = () => {
+    // Validar fechas
     if (!startDate || !endDate) {
       toast({
         title: 'Error',
@@ -66,6 +67,8 @@ export const BookingGuest: React.FC<BookingGuestProps> = ({
       return;
     }
 
+
+    // Validar número de personas
     if (numberOfGuests < 1) {
       toast({
         title: 'Error',
@@ -77,16 +80,23 @@ export const BookingGuest: React.FC<BookingGuestProps> = ({
       return;
     }
 
+
+    // Calcular el precio total
+    const totalPrice = calculateTotalPrice();
+
+    // Mostrar mensaje de éxito y simular el proceso de reserva
     toast({
       title: 'Reserva Exitosa',
-      description: 'Tu reserva ha sido confirmada. Serás redirigido al inicio.',
+      description: 'Tu reserva ha sido confirmada. Serás redirigido a la página de búsqueda.',
+
       status: 'success',
       duration: 3000,
       isClosable: true,
     });
 
     setTimeout(() => {
-      navigate('/');
+      // Redirigir a /search
+      navigate('/search');
     }, 3000);
   };
 

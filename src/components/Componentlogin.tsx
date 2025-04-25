@@ -15,6 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import icon from '@/assets/Icongreen.png';
 import iconNa from '@/assets/namegreen.png';
+import MainLayout from "@/layouts/MainLayout";
 interface LoginComponentProps {
   onLogin: (email: string, password: string) => Promise<void>;
   isLoading: boolean;
@@ -32,6 +33,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, err
   };
 
   return (
+    <MainLayout>
     <Box maxW="400px" mx="auto" mt={8} p="6" borderWidth="1px" borderRadius="lg" boxShadow="lg">
        <Center mb="8">
         <Box textAlign="center">
@@ -90,6 +92,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin, isLoading, err
         </Text>
       </form>
     </Box>
+    </MainLayout>
   );
 };
 
