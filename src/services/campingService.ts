@@ -32,11 +32,11 @@ export const campingService = {
     try {
       const response = await axiosInstance.get('/campings/');
       console.log('🌐 API raw response:', response);
-      
+
       // Extract the data array from the response
       const campings = response.data.data;
       console.log('✨ Extracted campings:', campings);
-      
+
       return campings;
     } catch (error: any) {
       console.error('🚫 Service error:', error);
@@ -55,12 +55,41 @@ export const campingService = {
 
   searchCampings: async (searchParams: SearchParams): Promise<CampingType[]> => {
     try {
-      const response = await axiosInstance.get('/campings/search', { 
-        params: searchParams 
+      const response = await axiosInstance.get('/campings/search', {
+        params: searchParams
       });
       return response.data;
     } catch (error: any) {
       throw new Error(error.response?.data?.message || 'Error searching campings');
     }
-  }
+  },
+
+  // funcion para crear un camping
+  
+  // createCamping: async (createCampingDto: string, imageFiles: File[]): Promise<CampingType> => {
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append('createCampingDto', JSON.stringify(createCampingDto));
+
+  //     imageFiles.forEach((file) => {
+  //       formData.append('files', file);
+  //     });
+
+  //     const response = await axiosInstance.post('/campings', formData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     });
+
+  //     console.log('Camping creado:', response.data);
+  //     console.log('Imágenes subidas:', imageFiles.map(file => file.name));
+
+  //     return response.data;
+  //   } catch (error: any) {
+  //     console.error('🚫 Service error (POST):', error);
+  //     throw new Error(error.response?.data?.message || 'Error creating camping');
+  //   }
+  // },
+
 };
+

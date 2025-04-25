@@ -43,9 +43,7 @@ export const useCampingStore = create<CampingStore>((set) => ({
     } catch (error: any) {
       set({ error: error.message, isLoading: false });
     }
-  }
+
+  },
+
 }));
-
-
-
-
