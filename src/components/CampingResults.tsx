@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 const CampingResults: React.FC = () => {
   const { campings, isLoading, fetchCampings } = useCampingStore();
+  const navigate = useNavigate();
   const fontSizeTitle = { base: 'lg', md: 'xl' };
-  const navigate = useNavigate(); // ← agregar esto
 
   useEffect(() => {
     fetchCampings();

@@ -8,9 +8,7 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import { useDisclosure } from '@chakra-ui/react';
 import { BookingModal } from '@/components/BookingModal/BookingModal';
 import { BookingSuccess } from '@/components/BookingSuccess/BookingSuccess.tsx';
-import { Footer } from './Footer';
-
-
+import MainLayout from '@/layouts/MainLayout';
 
 const CampingForm: React.FC = () => {
     const navigate = useNavigate();
@@ -25,6 +23,15 @@ const CampingForm: React.FC = () => {
         name: string;
         pricePerNight: string;
     } | null>(null);
+  const navigate = useNavigate();
+  const toast = useToast();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [bookingDetails, setBookingDetails] = useState<{
+    campingName: string;
+    startDate: string;
+    endDate: string;
+  } | null>(null);
+  const [submittedCamping, setSubmittedCamping] = useState<Partial<CampingType> | null>(null);
 
     const availableAmenities: Amenity[] = [
         { id: 1, name: "Duchas", available: true, icon: "🚿" },
@@ -118,111 +125,92 @@ const CampingForm: React.FC = () => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Enviando camping:', formData);              
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Enviando camping:', formData);
 
-        toast({
-            title: 'Camping creado',
-            description: 'Se ha creado un nuevo camping correctamente.',
-            status: 'success',
-            duration: 3000,
-            isClosable: true,
-        });
+    // Guardar los datos del camping para mostrarlos en el modal
+    setSubmittedCamping(formData);
 
-        // Guardar los datos del camping para usarlos en el modal
-        setSubmittedCamping({
-            name: formData.name || 'Camping Sin Nombre',
-            pricePerNight: `$${formData.pricing?.[0]?.pricePerNight || 0} /noche`,
-        });
+    // Abrir el modal para confirmar la publicación
+    onOpen();
+  };
 
-        // Abrir el modal de reserva
-        onOpen();
+  const handleConfirmBooking = () => {
+    // Aquí agregar la llamada al POST a la API para guardar el camping
+    console.log('Publicando camping:', submittedCamping);
 
+    toast({
+      title: 'Camping publicado',
+      description: 'Tu camping ha sido publicado correctamente.',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    });
 
-    };
+    // Mostrar mensaje de éxito
+    setBookingDetails({
+      campingName: submittedCamping?.name || 'Camping Sin Nombre',
+      startDate: 'N/A', // No aplica para dueños
+      endDate: 'N/A',  // No aplica para dueños
+    });
 
-    const handleConfirmBooking = (startDate: string, endDate: string) => {
-        if (submittedCamping) {
-            setBookingDetails({
-                campingName: submittedCamping.name,
-                startDate,
-                endDate,
-            });
-        }
+    // Cerrar el modal
+    onClose();
+  };
 
-        // Limpiar formulario después de confirmar la reserva
-        setFormData({
-            name: '',
-            description: '',
-            contactPhone: '',
-            location: {
-                id: 0,
-                campingAddress: '',
-                mapLink: '',
-                city: '',
-                country: '',
-            },
-            pricing: [
-                { id: 0, tarifa: 'Noche en carpa', pricePerNight: 0, campingId: 0 },
-                { id: 0, tarifa: 'Noche en vehículo', pricePerNight: 0, campingId: 0 },
-                { id: 0, tarifa: 'Pase diario', pricePerNight: 0, campingId: 0 },
-            ],
-            amenities: [],
-            nearbyAttractions: [],
-        });
-    };
+  const handleCloseSuccess = () => {
+    setBookingDetails(null);
+    setSubmittedCamping(null);
+    navigate('/');
+  };
 
-    const handleCloseSuccess = () => {
-        setBookingDetails(null);
-        setSubmittedCamping(null);
-        navigate('/');
-    };
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-    return (
-        <>
-            {bookingDetails ? (
-                <BookingSuccess
-                    campingName={bookingDetails.campingName}
-                    startDate={bookingDetails.startDate}
-                    endDate={bookingDetails.endDate}
-                    onClose={handleCloseSuccess}
-                />
-            ) : (
-                <Box
-                    maxW="400px"
-                    mx="auto"
-                    mt="8"
-                    p="6"
-                    borderWidth="1px"
-                    borderRadius="lg"
-                    boxShadow="lg"
-                    bg="primary.light"
-                >
-                    <Center mb="8">
-                        <Box textAlign="center">
-                            <img src={icon} alt="Campers Icon" style={{ width: "150px" }} />
-                            <img src={name} alt="Campers Name" style={{ width: "150px" }} />
-                        </Box>
-                    </Center>
-                    <Text textAlign="center" fontSize="2xl" fontWeight="bold" mb="6">
-                        Registrá tu camping
-                    </Text>
-                    <Box maxW="lg" mx="auto" p={6}>
-                        <form onSubmit={handleSubmit}>
-                            <VStack spacing={4} align="stretch">
-                                <FormControl isRequired>
-                                    <FormLabel>Nombre</FormLabel>
-                                    <Input
-                                        value={formData.name}
-                                        placeholder='Escribí el nombre del camping'
-                                        onChange={(e) => handleChange('name', e.target.value)}
-                                        sx={{ '::placeholder': { fontSize: 'xs' } }}
-                                        bg='white'
-                                    />
-                                </FormControl>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <MainLayout>
+      {bookingDetails ? (
+        <BookingSuccess
+          campingName={bookingDetails.campingName}
+          startDate={bookingDetails.startDate}
+          endDate={bookingDetails.endDate}
+          onClose={handleCloseSuccess}
+        />
+      ) : (
+        <Box
+          maxW="400px"
+          mx="auto"
+          mt="8"
+          p="6"
+          borderWidth="1px"
+          borderRadius="lg"
+          boxShadow="lg"
+          bg="primary.light"
+        >
+          <Center mb="8">
+            <Box textAlign="center">
+              <img src={icon} alt="Campers Icon" style={{ width: "150px" }} />
+              <img src={name} alt="Campers Name" style={{ width: "150px" }} />
+            </Box>
+          </Center>
+          <Text textAlign="center" fontSize="2xl" fontWeight="bold" mb="6">
+            Registrá tu camping
+          </Text>
+          <Box maxW="lg" mx="auto" p={6}>
+            <form onSubmit={handleSubmit}>
+              <VStack spacing={4} align="stretch">
+                <FormControl isRequired>
+                  <FormLabel>Nombre</FormLabel>
+                  <Input
+                    value={formData.name}
+                    placeholder='Escribí el nombre del camping'
+                    onChange={(e) => handleChange('name', e.target.value)}
+                    sx={{ '::placeholder': { fontSize: 'xs' } }}
+                    bg='white'
+                  />
+                </FormControl>
 
                                 <FormControl isRequired>
                                     <FormLabel>Ubicación</FormLabel>
@@ -450,18 +438,16 @@ const CampingForm: React.FC = () => {
                 </Box>
             )}
 
-            {submittedCamping && (
-                <BookingModal
-                    isOpen={isOpen}
-                    onClose={onClose}
-                    campingName={submittedCamping.name}
-                    pricePerNight={submittedCamping.pricePerNight}
-                    onConfirm={handleConfirmBooking}
-                />
-            )}
-            <Footer />
-        </>
-    );
+      {submittedCamping && (
+        <BookingModal
+          isOpen={isOpen}
+          onClose={onClose}
+          onConfirm={handleConfirmBooking}
+          campingData={submittedCamping}
+        />
+      )}
+    </MainLayout>
+  );
 };
 
 export default CampingForm;

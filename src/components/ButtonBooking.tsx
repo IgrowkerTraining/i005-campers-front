@@ -1,24 +1,26 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 interface ButtonBookingProps {
-  campingName: string;
-  contactNumber: string; 
+  campingId: number; // Añadimos el ID del camping
+  campingName: string; // Mantenemos el nombre para usarlo en el formulario de reserva
 }
 
-const ButtonBooking: React.FC<ButtonBookingProps> = ({ campingName, contactNumber }) => {
- 
-  const mensajePredefinido = `Hola, me gustaría reservar en ${campingName}. ¿Podrían darme más información?`;
+const ButtonBooking: React.FC<ButtonBookingProps> = ({ campingId, campingName }) => {
+  const navigate = useNavigate();
 
-  const enlaceWhatsApp = `https://wa.me/${contactNumber}?text=${encodeURIComponent(mensajePredefinido)}`;
+  const handleBooking = () => {
+    navigate(`/booking/${campingId}`);
+  };
 
   return (
     <Button
       bg="secondary.main"
-      color="white" 
+      color="white"
       _hover={{ bg: "primary.main", color: "white" }}
       size="lg"
-      onClick={() => window.open(enlaceWhatsApp, '_blank')}
+      onClick={handleBooking}
     >
       Reservar
     </Button>

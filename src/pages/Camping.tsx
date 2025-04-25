@@ -162,7 +162,7 @@ function Camping() {
           <Divider my={6} />
 
           <HStack mb={4}>
-            <VStack align="center" spacing={2}  >
+            <VStack align="center" spacing={2}>
               <Heading size="md" fontWeight="semibold" fontSize="20px">
                 Imágenes y videos
               </Heading>
@@ -187,7 +187,7 @@ function Camping() {
           <Divider my={6} />
 
           <HStack mb={4} justify="space-between">
-            <Heading size="md" >
+            <Heading size="md">
               Reseñas
             </Heading>
             <Button variant="link" color="green.500">
@@ -214,7 +214,10 @@ function Camping() {
             <Text fontSize="2xl" fontWeight="bold">            
               €{currentCamping.pricing[0].pricePerNight} / noche
             </Text>
-            <ButtonBooking campingName="Prueba de camping" contactNumber="123-456-7890" />
+            <ButtonBooking
+              campingId={currentCamping.id}
+              campingName={currentCamping.name}
+            />
           </HStack>
         </Box>
       </Box>      
