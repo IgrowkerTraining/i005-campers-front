@@ -19,7 +19,8 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import { useDisclosure } from '@chakra-ui/react';
 import { BookingModal } from '@/components/BookingModal/BookingModal';
 import { BookingSuccess } from '@/components/BookingSuccess/BookingSuccess.tsx';
-import { Footer } from './Footer';
+import MainLayout from '@/layouts/MainLayout';
+
 const CampingForm: React.FC = () => {
   const navigate = useNavigate();
   const toast = useToast();
@@ -29,10 +30,7 @@ const CampingForm: React.FC = () => {
     startDate: string;
     endDate: string;
   } | null>(null);
-  const [submittedCamping, setSubmittedCamping] = useState<{
-    name: string;
-    pricePerNight: string;
-  } | null>(null);
+  const [submittedCamping, setSubmittedCamping] = useState<Partial<CampingType> | null>(null);
 
   const availableAmenities: Amenity[] = [
     { id: 1, name: "Duchas", available: true, icon: "🚿" },
@@ -116,57 +114,34 @@ const CampingForm: React.FC = () => {
     e.preventDefault();
     console.log('Enviando camping:', formData);
 
-    // Aquí agregar la llamada al POST a la API
+    // Guardar los datos del camping para mostrarlos en el modal
+    setSubmittedCamping(formData);
+
+    // Abrir el modal para confirmar la publicación
+    onOpen();
+  };
+
+  const handleConfirmBooking = () => {
+    // Aquí agregar la llamada al POST a la API para guardar el camping
+    console.log('Publicando camping:', submittedCamping);
 
     toast({
-      title: 'Camping creado',
-      description: 'Se ha creado un nuevo camping correctamente.',
+      title: 'Camping publicado',
+      description: 'Tu camping ha sido publicado correctamente.',
       status: 'success',
       duration: 3000,
       isClosable: true,
     });
 
-    // Guardar los datos del camping para usarlos en el modal
-    setSubmittedCamping({
-      name: formData.name || 'Camping Sin Nombre',
-      pricePerNight: `$${formData.pricing?.[0]?.pricePerNight || 0} /noche`,
+    // Mostrar mensaje de éxito
+    setBookingDetails({
+      campingName: submittedCamping?.name || 'Camping Sin Nombre',
+      startDate: 'N/A', // No aplica para dueños
+      endDate: 'N/A',  // No aplica para dueños
     });
 
-    // Abrir el modal de reserva
-    onOpen();
-
-    
-  };
-
-  const handleConfirmBooking = (startDate: string, endDate: string) => {
-    if (submittedCamping) {
-      setBookingDetails({
-        campingName: submittedCamping.name,
-        startDate,
-        endDate,
-      });
-    }
-
-    // Limpiar formulario después de confirmar la reserva
-    setFormData({
-      name: '',
-      description: '',
-      contactPhone: '',
-      location: {
-        id: 0,
-        campingAddress: '',
-        mapLink: '',
-        city: '',
-        country: '',
-      },
-      pricing: [
-        { id: 0, tarifa: 'Noche en carpa', pricePerNight: 0, campingId: 0 },
-        { id: 0, tarifa: 'Noche en vehículo', pricePerNight: 0, campingId: 0 },
-        { id: 0, tarifa: 'Pase diario', pricePerNight: 0, campingId: 0 },
-      ],
-      amenities: [],
-      nearbyAttractions: [],
-    });
+    // Cerrar el modal
+    onClose();
   };
 
   const handleCloseSuccess = () => {
@@ -174,11 +149,13 @@ const CampingForm: React.FC = () => {
     setSubmittedCamping(null);
     navigate('/');
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
-    <>
+    <MainLayout>
       {bookingDetails ? (
         <BookingSuccess
           campingName={bookingDetails.campingName}
@@ -441,13 +418,11 @@ const CampingForm: React.FC = () => {
         <BookingModal
           isOpen={isOpen}
           onClose={onClose}
-          campingName={submittedCamping.name}
-          pricePerNight={submittedCamping.pricePerNight}
           onConfirm={handleConfirmBooking}
+          campingData={submittedCamping}
         />
       )}
-      <Footer />
-    </>
+    </MainLayout>
   );
 };
 

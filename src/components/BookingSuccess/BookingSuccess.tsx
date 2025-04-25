@@ -1,4 +1,16 @@
-import { Alert, AlertIcon, AlertTitle, AlertDescription, Button } from '@chakra-ui/react';
+// src/components/BookingSuccess/BookingSuccess.tsx
+import React from 'react';
+import {
+  Box,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Text,
+} from '@chakra-ui/react';
 
 interface BookingSuccessProps {
   campingName: string;
@@ -13,29 +25,37 @@ export const BookingSuccess: React.FC<BookingSuccessProps> = ({
   endDate,
   onClose,
 }) => {
+  const isOwner = startDate === 'N/A' && endDate === 'N/A'; // Detectamos si es un dueño
+
   return (
-    <Alert
-      status="success"
-      variant="subtle"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      textAlign="center"
-      height={{ base: '200px', md: '250px' }}
-      borderRadius="md"
-      p={4}
-      m={4}
-    >
-      <AlertIcon boxSize="40px" mr={0} />
-      <AlertTitle mt={4} mb={1} fontSize="lg">
-        ¡Reserva Confirmada!
-      </AlertTitle>
-      <AlertDescription maxWidth="sm">
-        Tu reserva en <strong>{campingName}</strong> desde el {startDate} hasta el {endDate} ha sido confirmada exitosamente.
-      </AlertDescription>
-      <Button mt={4} colorScheme="teal" onClick={onClose}>
-        Volver al Inicio
-      </Button>
-    </Alert>
+    <Modal isOpen={true} onClose={onClose} isCentered size="md">
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>
+          {isOwner ? '¡Camping Publicado!' : '¡Reserva Confirmada!'}
+        </ModalHeader>
+        <ModalBody>
+          <Box textAlign="center">
+            <Text fontSize="lg" fontWeight="bold" mb={2}>
+              {campingName}
+            </Text>
+            {isOwner ? (
+              <Text>Tu camping ha sido publicado correctamente.</Text>
+            ) : (
+              <>
+                <Text>Fecha de Inicio: {startDate}</Text>
+                <Text>Fecha de Fin: {endDate}</Text>
+                <Text mt={2}>¡Gracias por tu reserva!</Text>
+              </>
+            )}
+          </Box>
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme="teal" onClick={onClose}>
+            Cerrar
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
   );
 };

@@ -24,6 +24,7 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";// Icono del ojo simple
 import icon from "@/assets/Icongreen.png";
 import iconNa from "@/assets/namegreen.png";
 import { userService } from '@/services/userService';
+import MainLayout from "@/layouts/MainLayout";
 
 const RegisterComponent: React.FC = () => {
     const [email, setEmail] = useState<string>("");
@@ -76,6 +77,7 @@ const RegisterComponent: React.FC = () => {
     };
 
     return (
+        <MainLayout>
         <Box
             maxW="400px"
             mx="auto"
@@ -212,6 +214,7 @@ const RegisterComponent: React.FC = () => {
                 </Text>
             </form>
         </Box>
+        </MainLayout>
     );
 };
 
